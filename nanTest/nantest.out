@@ -1,0 +1,2865 @@
+******************
+20231120_1600
+******************
+20231120_1630
+******************
+20231120_1700
+******************
+20231120_1730
+******************
+20231120_1800
+******************
+20231120_1830
+******************
+20231120_1900
+******************
+20231120_1930
+******************
+20231120_2000
+******************
+20231120_2030
+******************
+20231120_2100
+******************
+20231120_2130
+******************
+20231120_2200
+******************
+20231120_2230
+******************
+20231120_2300
+******************
+20231120_2330
+******************
+20231121_0000
+******************
+20231121_0030
+******************
+20231121_0100
+******************
+20231121_0130
+******************
+20231121_0200
+******************
+20231121_0230
+******************
+20231121_0300
+******************
+20231121_0330
+******************
+20231121_0400
+******************
+20231121_0430
+******************
+20231121_0500
+******************
+20231121_0530
+******************
+20231121_0600
+******************
+20231121_0630
+******************
+20231121_0700
+******************
+20231121_0730
+******************
+Traceback (most recent call last):
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+            ~~~~~~~~~~~^^^^^
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231121_0830.grib2',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), 'bef678a7-bf49-4900-ac83-cb6d21f407e2']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nfs/home11/ugrad/2022/ro561666/website/nanTest/nan_test.py", line 58, in <module>
+    ds = xr.open_dataset(File)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/api.py", line 570, in open_dataset
+    backend_ds = backend.open_dataset(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 602, in open_dataset
+    store = NetCDF4DataStore.open(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 400, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 347, in __init__
+    self.format = self.ds.data_model
+                  ^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 409, in ds
+    return self._acquire()
+           ^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 403, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 2464, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2027, in netCDF4._netCDF4._ensure_nc_success
+OSError: [Errno -90] NetCDF: file not found: 'https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231121_0830.grib2'
+20231121_0830
+******************
+20231121_0900
+******************
+20231121_0930
+******************
+20231121_1000
+******************
+20231121_1030
+******************
+20231121_1100
+******************
+20231121_1130
+******************
+20231121_1200
+******************
+20231121_1230
+******************
+20231121_1300
+******************
+20231121_1330
+******************
+20231121_1400
+******************
+20231121_1430
+******************
+20231121_1500
+******************
+20231121_1530
+******************
+20231121_1600
+******************
+20231121_1630
+******************
+20231121_1700
+******************
+20231121_1730
+******************
+20231121_1800
+******************
+20231121_1830
+******************
+20231121_1900
+******************
+20231121_1930
+******************
+20231121_2000
+******************
+20231121_2030
+******************
+20231121_2100
+******************
+20231121_2130
+******************
+20231121_2200
+******************
+20231121_2230
+******************
+20231121_2300
+******************
+20231121_2330
+******************
+20231122_0000
+******************
+20231122_0030
+******************
+20231122_0100
+******************
+20231122_0130
+******************
+20231122_0200
+******************
+20231122_0230
+******************
+20231122_0300
+******************
+20231122_0330
+******************
+20231122_0400
+******************
+20231122_0430
+******************
+20231122_0500
+******************
+Traceback (most recent call last):
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+            ~~~~~~~~~~~^^^^^
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231122_0530.grib2',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '0412cf0a-9037-4f55-b61b-87d1a1c56774']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nfs/home11/ugrad/2022/ro561666/website/nanTest/nan_test.py", line 58, in <module>
+    ds = xr.open_dataset(File)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/api.py", line 570, in open_dataset
+    backend_ds = backend.open_dataset(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 602, in open_dataset
+    store = NetCDF4DataStore.open(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 400, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 347, in __init__
+    self.format = self.ds.data_model
+                  ^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 409, in ds
+    return self._acquire()
+           ^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 403, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 2464, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2027, in netCDF4._netCDF4._ensure_nc_success
+OSError: [Errno -90] NetCDF: file not found: 'https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231122_0530.grib2'
+20231122_0600
+******************
+20231122_0630
+******************
+20231122_0700
+******************
+20231122_0730
+******************
+20231122_0800
+******************
+20231122_0830
+******************
+20231122_0900
+******************
+20231122_0930
+******************
+20231122_1000
+******************
+20231122_1030
+******************
+20231122_1100
+******************
+20231122_1130
+******************
+20231122_1200
+******************
+20231122_1230
+******************
+20231122_1300
+******************
+20231122_1330
+******************
+20231122_1400
+******************
+20231122_1430
+******************
+20231122_1500
+******************
+20231122_1530
+******************
+20231122_1600
+******************
+20231122_1630
+******************
+20231122_1700
+******************
+20231122_1730
+******************
+20231122_1800
+******************
+20231122_1830
+******************
+20231122_1900
+******************
+20231122_1930
+******************
+20231122_2000
+******************
+20231122_2030
+******************
+20231122_2100
+******************
+20231122_2130
+******************
+20231122_2200
+******************
+20231122_2230
+******************
+20231122_2300
+******************
+20231122_2330
+******************
+20231123_0000
+******************
+20231123_0030
+******************
+20231123_0100
+******************
+20231123_0130
+******************
+20231123_0200
+******************
+20231123_0230
+******************
+20231123_0300
+******************
+20231123_0330
+******************
+20231123_0400
+******************
+20231123_0430
+******************
+20231123_0500
+******************
+20231123_0530
+******************
+20231123_0600
+******************
+20231123_0630
+******************
+20231123_0700
+******************
+20231123_0730
+******************
+20231123_0800
+******************
+20231123_0830
+******************
+20231123_0900
+******************
+20231123_0930
+******************
+20231123_1000
+******************
+20231123_1030
+******************
+20231123_1100
+******************
+20231123_1130
+******************
+20231123_1200
+******************
+20231123_1230
+******************
+20231123_1300
+******************
+20231123_1330
+******************
+20231123_1400
+******************
+20231123_1430
+******************
+20231123_1500
+******************
+20231123_1530
+******************
+20231123_1600
+******************
+20231123_1630
+******************
+20231123_1700
+******************
+20231123_1730
+******************
+20231123_1800
+******************
+20231123_1830
+******************
+20231123_1900
+******************
+20231123_1930
+******************
+20231123_2000
+******************
+20231123_2030
+******************
+20231123_2100
+******************
+20231123_2130
+******************
+20231123_2200
+******************
+20231123_2230
+******************
+20231123_2300
+******************
+20231123_2330
+******************
+20231124_0000
+******************
+Traceback (most recent call last):
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+            ~~~~~~~~~~~^^^^^
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0030.grib2',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), 'e9d35421-f9f2-479d-8f79-66f53229e342']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nfs/home11/ugrad/2022/ro561666/website/nanTest/nan_test.py", line 58, in <module>
+    ds = xr.open_dataset(File)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/api.py", line 570, in open_dataset
+    backend_ds = backend.open_dataset(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 602, in open_dataset
+    store = NetCDF4DataStore.open(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 400, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 347, in __init__
+    self.format = self.ds.data_model
+                  ^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 409, in ds
+    return self._acquire()
+           ^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 403, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 2464, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2027, in netCDF4._netCDF4._ensure_nc_success
+OSError: [Errno -90] NetCDF: file not found: 'https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0030.grib2'
+Traceback (most recent call last):
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+            ~~~~~~~~~~~^^^^^
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0100.grib2',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '2009e71d-cc95-431b-a2f2-0a412668ca71']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nfs/home11/ugrad/2022/ro561666/website/nanTest/nan_test.py", line 58, in <module>
+    ds = xr.open_dataset(File)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/api.py", line 570, in open_dataset
+    backend_ds = backend.open_dataset(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 602, in open_dataset
+    store = NetCDF4DataStore.open(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 400, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 347, in __init__
+    self.format = self.ds.data_model
+                  ^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 409, in ds
+    return self._acquire()
+           ^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 403, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 2464, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2027, in netCDF4._netCDF4._ensure_nc_success
+OSError: [Errno -90] NetCDF: file not found: 'https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0100.grib2'
+Traceback (most recent call last):
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+            ~~~~~~~~~~~^^^^^
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0130.grib2',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '1bf173b4-8fae-4a34-82fa-4c33005b55c9']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nfs/home11/ugrad/2022/ro561666/website/nanTest/nan_test.py", line 58, in <module>
+    ds = xr.open_dataset(File)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/api.py", line 570, in open_dataset
+    backend_ds = backend.open_dataset(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 602, in open_dataset
+    store = NetCDF4DataStore.open(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 400, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 347, in __init__
+    self.format = self.ds.data_model
+                  ^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 409, in ds
+    return self._acquire()
+           ^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 403, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 2464, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2027, in netCDF4._netCDF4._ensure_nc_success
+OSError: [Errno -90] NetCDF: file not found: 'https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0130.grib2'
+Traceback (most recent call last):
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+            ~~~~~~~~~~~^^^^^
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0200.grib2',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), 'b4c73a34-30e7-45e8-afdd-993f5d55c200']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nfs/home11/ugrad/2022/ro561666/website/nanTest/nan_test.py", line 58, in <module>
+    ds = xr.open_dataset(File)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/api.py", line 570, in open_dataset
+    backend_ds = backend.open_dataset(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 602, in open_dataset
+    store = NetCDF4DataStore.open(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 400, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 347, in __init__
+    self.format = self.ds.data_model
+                  ^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 409, in ds
+    return self._acquire()
+           ^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 403, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 2464, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2027, in netCDF4._netCDF4._ensure_nc_success
+OSError: [Errno -90] NetCDF: file not found: 'https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0200.grib2'
+Traceback (most recent call last):
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+            ~~~~~~~~~~~^^^^^
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0230.grib2',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '4ff83af3-875c-488b-860d-73d703c24742']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nfs/home11/ugrad/2022/ro561666/website/nanTest/nan_test.py", line 58, in <module>
+    ds = xr.open_dataset(File)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/api.py", line 570, in open_dataset
+    backend_ds = backend.open_dataset(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 602, in open_dataset
+    store = NetCDF4DataStore.open(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 400, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 347, in __init__
+    self.format = self.ds.data_model
+                  ^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 409, in ds
+    return self._acquire()
+           ^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 403, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 2464, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2027, in netCDF4._netCDF4._ensure_nc_success
+OSError: [Errno -90] NetCDF: file not found: 'https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0230.grib2'
+Traceback (most recent call last):
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+            ~~~~~~~~~~~^^^^^
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0300.grib2',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '057485c6-a733-435e-ad7a-44ce8742f5fd']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nfs/home11/ugrad/2022/ro561666/website/nanTest/nan_test.py", line 58, in <module>
+    ds = xr.open_dataset(File)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/api.py", line 570, in open_dataset
+    backend_ds = backend.open_dataset(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 602, in open_dataset
+    store = NetCDF4DataStore.open(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 400, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 347, in __init__
+    self.format = self.ds.data_model
+                  ^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 409, in ds
+    return self._acquire()
+           ^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 403, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 2464, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2027, in netCDF4._netCDF4._ensure_nc_success
+OSError: [Errno -90] NetCDF: file not found: 'https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0300.grib2'
+Traceback (most recent call last):
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+            ~~~~~~~~~~~^^^^^
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0330.grib2',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '58690ae6-888c-4296-9634-67912bd84f28']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nfs/home11/ugrad/2022/ro561666/website/nanTest/nan_test.py", line 58, in <module>
+    ds = xr.open_dataset(File)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/api.py", line 570, in open_dataset
+    backend_ds = backend.open_dataset(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 602, in open_dataset
+    store = NetCDF4DataStore.open(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 400, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 347, in __init__
+    self.format = self.ds.data_model
+                  ^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 409, in ds
+    return self._acquire()
+           ^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 403, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 2464, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2027, in netCDF4._netCDF4._ensure_nc_success
+OSError: [Errno -90] NetCDF: file not found: 'https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0330.grib2'
+Traceback (most recent call last):
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+            ~~~~~~~~~~~^^^^^
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0400.grib2',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), 'f9795325-1380-4eb1-bf43-1179cf487d89']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nfs/home11/ugrad/2022/ro561666/website/nanTest/nan_test.py", line 58, in <module>
+    ds = xr.open_dataset(File)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/api.py", line 570, in open_dataset
+    backend_ds = backend.open_dataset(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 602, in open_dataset
+    store = NetCDF4DataStore.open(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 400, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 347, in __init__
+    self.format = self.ds.data_model
+                  ^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 409, in ds
+    return self._acquire()
+           ^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 403, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 2464, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2027, in netCDF4._netCDF4._ensure_nc_success
+OSError: [Errno -90] NetCDF: file not found: 'https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0400.grib2'
+Traceback (most recent call last):
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+            ~~~~~~~~~~~^^^^^
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0430.grib2',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '792241fe-26d3-4f00-8fed-cc23adee6ed2']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nfs/home11/ugrad/2022/ro561666/website/nanTest/nan_test.py", line 58, in <module>
+    ds = xr.open_dataset(File)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/api.py", line 570, in open_dataset
+    backend_ds = backend.open_dataset(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 602, in open_dataset
+    store = NetCDF4DataStore.open(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 400, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 347, in __init__
+    self.format = self.ds.data_model
+                  ^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 409, in ds
+    return self._acquire()
+           ^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 403, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 2464, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2027, in netCDF4._netCDF4._ensure_nc_success
+OSError: [Errno -90] NetCDF: file not found: 'https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0430.grib2'
+Traceback (most recent call last):
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+            ~~~~~~~~~~~^^^^^
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0500.grib2',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), 'f02dbbbc-d411-43ce-96dd-bce1bd35812a']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nfs/home11/ugrad/2022/ro561666/website/nanTest/nan_test.py", line 58, in <module>
+    ds = xr.open_dataset(File)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/api.py", line 570, in open_dataset
+    backend_ds = backend.open_dataset(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 602, in open_dataset
+    store = NetCDF4DataStore.open(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 400, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 347, in __init__
+    self.format = self.ds.data_model
+                  ^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 409, in ds
+    return self._acquire()
+           ^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 403, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 2464, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2027, in netCDF4._netCDF4._ensure_nc_success
+OSError: [Errno -90] NetCDF: file not found: 'https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0500.grib2'
+Traceback (most recent call last):
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+            ~~~~~~~~~~~^^^^^
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0530.grib2',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '98bd103b-f7c3-468e-8790-27f0787a087e']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nfs/home11/ugrad/2022/ro561666/website/nanTest/nan_test.py", line 58, in <module>
+    ds = xr.open_dataset(File)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/api.py", line 570, in open_dataset
+    backend_ds = backend.open_dataset(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 602, in open_dataset
+    store = NetCDF4DataStore.open(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 400, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 347, in __init__
+    self.format = self.ds.data_model
+                  ^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 409, in ds
+    return self._acquire()
+           ^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 403, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 2464, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2027, in netCDF4._netCDF4._ensure_nc_success
+OSError: [Errno -90] NetCDF: file not found: 'https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0530.grib2'
+Traceback (most recent call last):
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+            ~~~~~~~~~~~^^^^^
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0600.grib2',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '5c6c09e9-37fb-4585-a803-5944906f0df3']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nfs/home11/ugrad/2022/ro561666/website/nanTest/nan_test.py", line 58, in <module>
+    ds = xr.open_dataset(File)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/api.py", line 570, in open_dataset
+    backend_ds = backend.open_dataset(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 602, in open_dataset
+    store = NetCDF4DataStore.open(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 400, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 347, in __init__
+    self.format = self.ds.data_model
+                  ^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 409, in ds
+    return self._acquire()
+           ^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 403, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 2464, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2027, in netCDF4._netCDF4._ensure_nc_success
+OSError: [Errno -90] NetCDF: file not found: 'https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0600.grib2'
+Traceback (most recent call last):
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+            ~~~~~~~~~~~^^^^^
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0630.grib2',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '3f7b3b82-52e6-4942-bdbc-2cb307220fd9']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nfs/home11/ugrad/2022/ro561666/website/nanTest/nan_test.py", line 58, in <module>
+    ds = xr.open_dataset(File)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/api.py", line 570, in open_dataset
+    backend_ds = backend.open_dataset(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 602, in open_dataset
+    store = NetCDF4DataStore.open(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 400, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 347, in __init__
+    self.format = self.ds.data_model
+                  ^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 409, in ds
+    return self._acquire()
+           ^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 403, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 2464, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2027, in netCDF4._netCDF4._ensure_nc_success
+OSError: [Errno -90] NetCDF: file not found: 'https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0630.grib2'
+Traceback (most recent call last):
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+            ~~~~~~~~~~~^^^^^
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0700.grib2',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), 'c02862e0-6b8c-4d0c-8e5d-a461bc8e8728']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nfs/home11/ugrad/2022/ro561666/website/nanTest/nan_test.py", line 58, in <module>
+    ds = xr.open_dataset(File)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/api.py", line 570, in open_dataset
+    backend_ds = backend.open_dataset(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 602, in open_dataset
+    store = NetCDF4DataStore.open(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 400, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 347, in __init__
+    self.format = self.ds.data_model
+                  ^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 409, in ds
+    return self._acquire()
+           ^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 403, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 2464, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2027, in netCDF4._netCDF4._ensure_nc_success
+OSError: [Errno -90] NetCDF: file not found: 'https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0700.grib2'
+Traceback (most recent call last):
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+            ~~~~~~~~~~~^^^^^
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0730.grib2',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), 'd3e2b74b-b3c9-4edc-a8ea-0cf3cea3f1ae']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nfs/home11/ugrad/2022/ro561666/website/nanTest/nan_test.py", line 58, in <module>
+    ds = xr.open_dataset(File)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/api.py", line 570, in open_dataset
+    backend_ds = backend.open_dataset(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 602, in open_dataset
+    store = NetCDF4DataStore.open(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 400, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 347, in __init__
+    self.format = self.ds.data_model
+                  ^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 409, in ds
+    return self._acquire()
+           ^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 403, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 2464, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2027, in netCDF4._netCDF4._ensure_nc_success
+OSError: [Errno -90] NetCDF: file not found: 'https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0730.grib2'
+Traceback (most recent call last):
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+            ~~~~~~~~~~~^^^^^
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0800.grib2',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '9a8df78a-9083-47f2-b58d-0a65594f5980']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nfs/home11/ugrad/2022/ro561666/website/nanTest/nan_test.py", line 58, in <module>
+    ds = xr.open_dataset(File)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/api.py", line 570, in open_dataset
+    backend_ds = backend.open_dataset(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 602, in open_dataset
+    store = NetCDF4DataStore.open(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 400, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 347, in __init__
+    self.format = self.ds.data_model
+                  ^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 409, in ds
+    return self._acquire()
+           ^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 403, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 2464, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2027, in netCDF4._netCDF4._ensure_nc_success
+OSError: [Errno -90] NetCDF: file not found: 'https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231124_0800.grib2'
+20231124_0830
+******************
+20231124_0900
+******************
+20231124_0930
+******************
+20231124_1000
+******************
+20231124_1030
+******************
+20231124_1100
+******************
+20231124_1130
+******************
+20231124_1200
+******************
+20231124_1230
+******************
+20231124_1300
+******************
+20231124_1330
+******************
+20231124_1400
+******************
+20231124_1430
+******************
+20231124_1500
+******************
+20231124_1530
+******************
+20231124_1600
+******************
+20231124_1630
+******************
+20231124_1700
+******************
+20231124_1730
+******************
+20231124_1800
+******************
+20231124_1830
+******************
+20231124_1900
+******************
+20231124_1930
+******************
+20231124_2000
+******************
+20231124_2030
+******************
+20231124_2100
+******************
+20231124_2130
+******************
+20231124_2200
+******************
+20231124_2230
+******************
+20231124_2300
+******************
+20231124_2330
+******************
+20231125_0000
+******************
+20231125_0030
+******************
+20231125_0100
+******************
+20231125_0130
+******************
+20231125_0200
+******************
+20231125_0230
+******************
+20231125_0300
+******************
+20231125_0330
+******************
+20231125_0400
+******************
+20231125_0430
+******************
+20231125_0500
+******************
+Traceback (most recent call last):
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+            ~~~~~~~~~~~^^^^^
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231125_0530.grib2',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '4a1d1eeb-5fe6-4e03-8c97-d15b16ed084c']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nfs/home11/ugrad/2022/ro561666/website/nanTest/nan_test.py", line 58, in <module>
+    ds = xr.open_dataset(File)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/api.py", line 570, in open_dataset
+    backend_ds = backend.open_dataset(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 602, in open_dataset
+    store = NetCDF4DataStore.open(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 400, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 347, in __init__
+    self.format = self.ds.data_model
+                  ^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 409, in ds
+    return self._acquire()
+           ^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 403, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 2464, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2027, in netCDF4._netCDF4._ensure_nc_success
+OSError: [Errno -90] NetCDF: file not found: 'https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231125_0530.grib2'
+20231125_0600
+******************
+20231125_0630
+******************
+20231125_0700
+******************
+20231125_0730
+******************
+20231125_0800
+******************
+20231125_0830
+******************
+20231125_0900
+******************
+20231125_0930
+******************
+20231125_1000
+******************
+20231125_1030
+******************
+20231125_1100
+******************
+20231125_1130
+******************
+20231125_1200
+******************
+20231125_1230
+******************
+20231125_1300
+******************
+20231125_1330
+******************
+20231125_1400
+******************
+20231125_1430
+******************
+20231125_1500
+******************
+20231125_1530
+******************
+20231125_1600
+******************
+20231125_1630
+******************
+20231125_1700
+******************
+20231125_1730
+******************
+20231125_1800
+******************
+20231125_1830
+******************
+20231125_1900
+******************
+20231125_1930
+******************
+20231125_2000
+******************
+20231125_2030
+******************
+20231125_2100
+******************
+20231125_2130
+******************
+20231125_2200
+******************
+20231125_2230
+******************
+20231125_2300
+******************
+20231125_2330
+******************
+20231126_0000
+******************
+20231126_0030
+******************
+20231126_0100
+******************
+20231126_0130
+******************
+20231126_0200
+******************
+20231126_0230
+******************
+20231126_0300
+******************
+20231126_0330
+******************
+20231126_0400
+******************
+20231126_0430
+******************
+20231126_0500
+******************
+Traceback (most recent call last):
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+            ~~~~~~~~~~~^^^^^
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231126_0530.grib2',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), 'b5988449-21ca-4b02-8ce2-59d462aafe40']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nfs/home11/ugrad/2022/ro561666/website/nanTest/nan_test.py", line 58, in <module>
+    ds = xr.open_dataset(File)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/api.py", line 570, in open_dataset
+    backend_ds = backend.open_dataset(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 602, in open_dataset
+    store = NetCDF4DataStore.open(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 400, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 347, in __init__
+    self.format = self.ds.data_model
+                  ^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 409, in ds
+    return self._acquire()
+           ^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 403, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 2464, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2027, in netCDF4._netCDF4._ensure_nc_success
+OSError: [Errno -90] NetCDF: file not found: 'https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231126_0530.grib2'
+20231126_0600
+******************
+20231126_0630
+******************
+20231126_0700
+******************
+20231126_0730
+******************
+20231126_0800
+******************
+20231126_0830
+******************
+20231126_0900
+******************
+20231126_0930
+******************
+20231126_1000
+******************
+20231126_1030
+******************
+20231126_1100
+******************
+20231126_1130
+******************
+20231126_1200
+******************
+20231126_1230
+******************
+20231126_1300
+******************
+20231126_1330
+******************
+20231126_1400
+******************
+20231126_1430
+******************
+20231126_1500
+******************
+20231126_1530
+******************
+20231126_1600
+******************
+20231126_1630
+******************
+20231126_1700
+******************
+20231126_1730
+******************
+20231126_1800
+******************
+20231126_1830
+******************
+20231126_1900
+******************
+20231126_1930
+******************
+20231126_2000
+******************
+20231126_2030
+******************
+20231126_2100
+******************
+20231126_2130
+******************
+20231126_2200
+******************
+20231126_2230
+******************
+20231126_2300
+******************
+20231126_2330
+******************
+20231127_0000
+******************
+20231127_0030
+******************
+20231127_0100
+******************
+20231127_0130
+******************
+20231127_0200
+******************
+20231127_0230
+******************
+20231127_0300
+******************
+20231127_0330
+******************
+20231127_0400
+******************
+20231127_0430
+******************
+20231127_0500
+******************
+20231127_0530
+******************
+20231127_0600
+******************
+20231127_0630
+******************
+20231127_0700
+******************
+20231127_0730
+******************
+20231127_0800
+******************
+20231127_0830
+******************
+20231127_0900
+******************
+20231127_0930
+******************
+20231127_1000
+******************
+20231127_1030
+******************
+20231127_1100
+******************
+20231127_1130
+******************
+20231127_1200
+******************
+20231127_1230
+******************
+20231127_1300
+******************
+20231127_1330
+******************
+20231127_1400
+******************
+20231127_1430
+******************
+20231127_1500
+******************
+20231127_1530
+******************
+20231127_1600
+******************
+20231127_1630
+******************
+20231127_1700
+******************
+20231127_1730
+******************
+20231127_1800
+******************
+20231127_1830
+******************
+20231127_1900
+******************
+20231127_1930
+******************
+20231127_2000
+******************
+20231127_2030
+******************
+20231127_2100
+******************
+20231127_2130
+******************
+20231127_2200
+******************
+20231127_2230
+******************
+20231127_2300
+******************
+20231127_2330
+******************
+20231128_0000
+******************
+20231128_0030
+******************
+20231128_0100
+******************
+20231128_0130
+******************
+20231128_0200
+******************
+20231128_0230
+******************
+20231128_0300
+******************
+20231128_0330
+******************
+20231128_0400
+******************
+20231128_0430
+******************
+20231128_0500
+******************
+Traceback (most recent call last):
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+            ~~~~~~~~~~~^^^^^
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231128_0530.grib2',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '15391d73-e97e-43d7-8d35-aa585583a5a6']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nfs/home11/ugrad/2022/ro561666/website/nanTest/nan_test.py", line 58, in <module>
+    ds = xr.open_dataset(File)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/api.py", line 570, in open_dataset
+    backend_ds = backend.open_dataset(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 602, in open_dataset
+    store = NetCDF4DataStore.open(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 400, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 347, in __init__
+    self.format = self.ds.data_model
+                  ^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 409, in ds
+    return self._acquire()
+           ^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 403, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 2464, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2027, in netCDF4._netCDF4._ensure_nc_success
+OSError: [Errno -90] NetCDF: file not found: 'https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231128_0530.grib2'
+20231128_0600
+******************
+20231128_0630
+******************
+20231128_0700
+******************
+20231128_0730
+******************
+20231128_0800
+******************
+20231128_0830
+******************
+20231128_0900
+******************
+20231128_0930
+******************
+20231128_1000
+******************
+20231128_1030
+******************
+20231128_1100
+******************
+20231128_1130
+******************
+20231128_1200
+******************
+20231128_1230
+******************
+20231128_1300
+******************
+20231128_1330
+******************
+20231128_1400
+******************
+20231128_1430
+******************
+20231128_1500
+******************
+20231128_1530
+******************
+20231128_1600
+******************
+20231128_1630
+******************
+20231128_1700
+******************
+20231128_1730
+******************
+20231128_1800
+******************
+20231128_1830
+******************
+20231128_1900
+******************
+20231128_1930
+******************
+20231128_2000
+******************
+20231128_2030
+******************
+20231128_2100
+******************
+20231128_2130
+******************
+20231128_2200
+******************
+20231128_2230
+******************
+20231128_2300
+******************
+20231128_2330
+******************
+20231129_0000
+******************
+20231129_0030
+******************
+20231129_0100
+******************
+20231129_0130
+******************
+20231129_0200
+******************
+20231129_0230
+******************
+20231129_0300
+******************
+20231129_0330
+******************
+20231129_0400
+******************
+20231129_0430
+******************
+20231129_0500
+******************
+Traceback (most recent call last):
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+            ~~~~~~~~~~~^^^^^
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231129_0530.grib2',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '2aeb7f57-e894-4eae-89b5-d30632a16602']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nfs/home11/ugrad/2022/ro561666/website/nanTest/nan_test.py", line 58, in <module>
+    ds = xr.open_dataset(File)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/api.py", line 570, in open_dataset
+    backend_ds = backend.open_dataset(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 602, in open_dataset
+    store = NetCDF4DataStore.open(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 400, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 347, in __init__
+    self.format = self.ds.data_model
+                  ^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 409, in ds
+    return self._acquire()
+           ^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 403, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 2464, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2027, in netCDF4._netCDF4._ensure_nc_success
+OSError: [Errno -90] NetCDF: file not found: 'https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231129_0530.grib2'
+20231129_0600
+******************
+20231129_0630
+******************
+20231129_0700
+******************
+20231129_0730
+******************
+20231129_0800
+******************
+20231129_0830
+******************
+20231129_0900
+******************
+20231129_0930
+******************
+20231129_1000
+******************
+20231129_1030
+******************
+20231129_1100
+******************
+20231129_1130
+******************
+20231129_1200
+******************
+20231129_1230
+******************
+20231129_1300
+******************
+20231129_1330
+******************
+20231129_1400
+******************
+20231129_1430
+******************
+20231129_1500
+******************
+20231129_1530
+******************
+20231129_1600
+******************
+20231129_1630
+******************
+20231129_1700
+******************
+20231129_1730
+******************
+20231129_1800
+******************
+20231129_1830
+******************
+20231129_1900
+******************
+20231129_1930
+******************
+20231129_2000
+******************
+20231129_2030
+******************
+20231129_2100
+******************
+20231129_2130
+******************
+20231129_2200
+******************
+20231129_2230
+******************
+20231129_2300
+******************
+20231129_2330
+******************
+20231130_0000
+******************
+20231130_0030
+******************
+20231130_0100
+******************
+20231130_0130
+******************
+20231130_0200
+******************
+20231130_0230
+******************
+20231130_0300
+******************
+20231130_0330
+******************
+20231130_0400
+******************
+20231130_0430
+******************
+20231130_0500
+******************
+20231130_0530
+******************
+20231130_0600
+******************
+20231130_0630
+******************
+20231130_0700
+******************
+20231130_0730
+******************
+20231130_0800
+******************
+20231130_0830
+******************
+20231130_0900
+******************
+20231130_0930
+******************
+20231130_1000
+******************
+20231130_1030
+******************
+20231130_1100
+******************
+20231130_1130
+******************
+20231130_1200
+******************
+20231130_1230
+******************
+20231130_1300
+******************
+20231130_1330
+******************
+20231130_1400
+******************
+20231130_1430
+******************
+20231130_1500
+******************
+20231130_1530
+******************
+20231130_1600
+******************
+20231130_1630
+******************
+20231130_1700
+******************
+20231130_1730
+******************
+20231130_1800
+******************
+20231130_1830
+******************
+20231130_1900
+******************
+20231130_1930
+******************
+20231130_2000
+******************
+20231130_2030
+******************
+20231130_2100
+******************
+20231130_2130
+******************
+20231130_2200
+******************
+20231130_2230
+******************
+Traceback (most recent call last):
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+            ~~~~~~~~~~~^^^^^
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231130_2300.grib2',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '5d4e9976-6afb-4825-8f85-07abcb63cfd3']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nfs/home11/ugrad/2022/ro561666/website/nanTest/nan_test.py", line 58, in <module>
+    ds = xr.open_dataset(File)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/api.py", line 570, in open_dataset
+    backend_ds = backend.open_dataset(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 602, in open_dataset
+    store = NetCDF4DataStore.open(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 400, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 347, in __init__
+    self.format = self.ds.data_model
+                  ^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 409, in ds
+    return self._acquire()
+           ^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 403, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 2464, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2027, in netCDF4._netCDF4._ensure_nc_success
+OSError: [Errno -90] NetCDF: file not found: 'https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231130_2300.grib2'
+20231130_2330
+******************
+20231201_0000
+******************
+20231201_0030
+******************
+20231201_0100
+******************
+syntax error, unexpected WORD_WORD, expecting SCAN_ATTR or SCAN_DATASET or SCAN_ERROR
+context: <!DOCTYPE^ HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"><html><head><title>502 Bad Gateway</title></head><body><h1>Bad Gateway</h1><p>The proxy server received an invalidresponse from an upstream server.<br /></p></body></html>
+syntax error, unexpected WORD_WORD, expecting SCAN_ATTR or SCAN_DATASET or SCAN_ERROR
+context: <!DOCTYPE^ HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"><html><head><title>502 Bad Gateway</title></head><body><h1>Bad Gateway</h1><p>The proxy server received an invalidresponse from an upstream server.<br /></p></body></html>
+syntax error, unexpected WORD_WORD, expecting SCAN_ATTR or SCAN_DATASET or SCAN_ERROR
+context: <!DOCTYPE^ HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"><html><head><title>502 Bad Gateway</title></head><body><h1>Bad Gateway</h1><p>The proxy server received an invalidresponse from an upstream server.<br /></p></body></html>
+syntax error, unexpected WORD_WORD, expecting SCAN_ATTR or SCAN_DATASET or SCAN_ERROR
+context: <!DOCTYPE^ HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"><html><head><title>502 Bad Gateway</title></head><body><h1>Bad Gateway</h1><p>The proxy server received an invalidresponse from an upstream server.<br /></p></body></html>
+syntax error, unexpected WORD_WORD, expecting SCAN_ATTR or SCAN_DATASET or SCAN_ERROR
+context: <!DOCTYPE^ HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"><html><head><title>502 Bad Gateway</title></head><body><h1>Bad Gateway</h1><p>The proxy server received an invalidresponse from an upstream server.<br /></p></body></html>
+20231201_0130
+******************
+20231201_0200
+******************
+20231201_0230
+******************
+20231201_0300
+******************
+20231201_0330
+******************
+20231201_0400
+******************
+20231201_0430
+******************
+20231201_0500
+******************
+20231201_0530
+******************
+20231201_0600
+******************
+20231201_0630
+******************
+20231201_0700
+******************
+20231201_0730
+******************
+20231201_0800
+******************
+20231201_0830
+******************
+20231201_0900
+******************
+20231201_0930
+******************
+20231201_1000
+******************
+20231201_1030
+******************
+20231201_1100
+******************
+20231201_1130
+******************
+20231201_1200
+******************
+20231201_1230
+******************
+20231201_1300
+******************
+20231201_1330
+******************
+20231201_1400
+******************
+20231201_1430
+******************
+20231201_1500
+******************
+20231201_1530
+******************
+20231201_1600
+******************
+20231201_1630
+******************
+20231201_1700
+******************
+20231201_1730
+******************
+20231201_1800
+******************
+20231201_1830
+******************
+20231201_1900
+******************
+20231201_1930
+******************
+20231201_2000
+******************
+20231201_2030
+******************
+20231201_2100
+******************
+20231201_2130
+******************
+20231201_2200
+******************
+20231201_2230
+******************
+20231201_2300
+******************
+syntax error, unexpected WORD_WORD, expecting SCAN_ATTR or SCAN_DATASET or SCAN_ERROR
+context: <!DOCTYPE^ HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"><html><head><title>502 Bad Gateway</title></head><body><h1>Bad Gateway</h1><p>The proxy server received an invalidresponse from an upstream server.<br /></p></body></html>
+syntax error, unexpected WORD_WORD, expecting SCAN_ATTR or SCAN_DATASET or SCAN_ERROR
+context: <!DOCTYPE^ HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"><html><head><title>502 Bad Gateway</title></head><body><h1>Bad Gateway</h1><p>The proxy server received an invalidresponse from an upstream server.<br /></p></body></html>
+20231201_2330
+******************
+20231202_0000
+******************
+20231202_0030
+******************
+20231202_0100
+******************
+20231202_0130
+******************
+20231202_0200
+******************
+20231202_0230
+******************
+20231202_0300
+******************
+20231202_0330
+******************
+20231202_0400
+******************
+20231202_0430
+******************
+20231202_0500
+******************
+Traceback (most recent call last):
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+            ~~~~~~~~~~~^^^^^
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231202_0530.grib2',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '45fb61d1-cf03-404d-9457-e5b8667245e5']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nfs/home11/ugrad/2022/ro561666/website/nanTest/nan_test.py", line 58, in <module>
+    ds = xr.open_dataset(File)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/api.py", line 570, in open_dataset
+    backend_ds = backend.open_dataset(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 602, in open_dataset
+    store = NetCDF4DataStore.open(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 400, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 347, in __init__
+    self.format = self.ds.data_model
+                  ^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 409, in ds
+    return self._acquire()
+           ^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 403, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 2464, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2027, in netCDF4._netCDF4._ensure_nc_success
+OSError: [Errno -90] NetCDF: file not found: 'https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231202_0530.grib2'
+20231202_0600
+******************
+20231202_0630
+******************
+20231202_0700
+******************
+20231202_0730
+******************
+20231202_0800
+******************
+20231202_0830
+******************
+20231202_0900
+******************
+20231202_0930
+******************
+20231202_1000
+******************
+20231202_1030
+******************
+20231202_1100
+******************
+20231202_1130
+******************
+20231202_1200
+******************
+20231202_1230
+******************
+20231202_1300
+******************
+20231202_1330
+******************
+20231202_1400
+******************
+20231202_1430
+******************
+20231202_1500
+******************
+20231202_1530
+******************
+20231202_1600
+******************
+20231202_1630
+******************
+20231202_1700
+******************
+20231202_1730
+******************
+20231202_1800
+******************
+20231202_1830
+******************
+20231202_1900
+******************
+20231202_1930
+******************
+20231202_2000
+******************
+20231202_2030
+******************
+20231202_2100
+******************
+20231202_2130
+******************
+20231202_2200
+******************
+20231202_2230
+******************
+20231202_2300
+******************
+20231202_2330
+******************
+20231203_0000
+******************
+20231203_0030
+******************
+20231203_0100
+******************
+20231203_0130
+******************
+20231203_0200
+******************
+20231203_0230
+******************
+20231203_0300
+******************
+20231203_0330
+******************
+20231203_0400
+******************
+20231203_0430
+******************
+20231203_0500
+******************
+20231203_0530
+******************
+20231203_0600
+******************
+20231203_0630
+******************
+20231203_0700
+******************
+20231203_0730
+******************
+20231203_0800
+******************
+20231203_0830
+******************
+20231203_0900
+******************
+20231203_0930
+******************
+20231203_1000
+******************
+20231203_1030
+******************
+20231203_1100
+******************
+20231203_1130
+******************
+20231203_1200
+******************
+20231203_1230
+******************
+20231203_1300
+******************
+20231203_1330
+******************
+20231203_1400
+******************
+20231203_1430
+******************
+20231203_1500
+******************
+20231203_1530
+******************
+20231203_1600
+******************
+20231203_1630
+******************
+20231203_1700
+******************
+20231203_1730
+******************
+20231203_1800
+******************
+20231203_1830
+******************
+20231203_1900
+******************
+20231203_1930
+******************
+20231203_2000
+******************
+20231203_2030
+******************
+20231203_2100
+******************
+20231203_2130
+******************
+20231203_2200
+******************
+20231203_2230
+******************
+20231203_2300
+******************
+20231203_2330
+******************
+20231204_0000
+******************
+20231204_0030
+******************
+20231204_0100
+******************
+20231204_0130
+******************
+20231204_0200
+******************
+20231204_0230
+******************
+20231204_0300
+******************
+20231204_0330
+******************
+20231204_0400
+******************
+20231204_0430
+******************
+20231204_0500
+******************
+20231204_0530
+******************
+20231204_0600
+******************
+20231204_0630
+******************
+20231204_0700
+******************
+20231204_0730
+******************
+20231204_0800
+******************
+20231204_0830
+******************
+20231204_0900
+******************
+20231204_0930
+******************
+20231204_1000
+******************
+20231204_1030
+******************
+20231204_1100
+******************
+20231204_1130
+******************
+20231204_1200
+Traceback (most recent call last):
+  File "/nfs/home11/ugrad/2022/ro561666/website/nanTest/nan_test.py", line 385, in <module>
+    wxNew = wx.isel(timeDictWx)
+            ^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/core/dataarray.py", line 1421, in isel
+    variable = self._variable.isel(indexers, missing_dims=missing_dims)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/core/variable.py", line 1378, in isel
+    return self[key]
+           ~~~~^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/core/variable.py", line 900, in __getitem__
+    data = as_indexable(self._data)[indexer]
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/core/indexing.py", line 700, in __getitem__
+    return type(self)(_wrap_numpy_scalars(self.array[key]))
+                                          ~~~~~~~~~~^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/core/indexing.py", line 667, in __getitem__
+    return type(self)(_wrap_numpy_scalars(self.array[key]))
+                                          ~~~~~~~~~~^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/core/indexing.py", line 567, in __getitem__
+    return type(self)(self.array, self._updated_key(indexer))
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/core/indexing.py", line 533, in _updated_key
+    full_key.append(_index_indexer_1d(k, next(iter_new_key), size))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/core/indexing.py", line 285, in _index_indexer_1d
+    indexer = _expand_slice(old_indexer, size)[applied_indexer]
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+IndexError: index 16 is out of bounds for axis 0 with size 16
+20231204_1230
+******************
+20231204_1300
+******************
+20231204_1330
+******************
+20231204_1400
+******************
+Traceback (most recent call last):
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+            ~~~~~~~~~~~^^^^^
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231204_1430.grib2',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '8428192c-02df-4f89-86e6-961bf042fd85']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nfs/home11/ugrad/2022/ro561666/website/nanTest/nan_test.py", line 58, in <module>
+    ds = xr.open_dataset(File)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/api.py", line 570, in open_dataset
+    backend_ds = backend.open_dataset(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 602, in open_dataset
+    store = NetCDF4DataStore.open(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 400, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 347, in __init__
+    self.format = self.ds.data_model
+                  ^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 409, in ds
+    return self._acquire()
+           ^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 403, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 2464, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2027, in netCDF4._netCDF4._ensure_nc_success
+OSError: [Errno -90] NetCDF: file not found: 'https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231204_1430.grib2'
+20231204_1500
+******************
+20231204_1530
+******************
+20231204_1600
+******************
+20231204_1630
+******************
+20231204_1700
+******************
+20231204_1730
+******************
+20231204_1800
+******************
+20231204_1830
+******************
+20231204_1900
+******************
+20231204_1930
+******************
+20231204_2030
+******************
+20231204_2030
+******************
+20231204_2100
+******************
+20231204_2130
+******************
+20231204_2200
+******************
+20231204_2230
+******************
+20231204_2300
+******************
+20231204_2330
+******************
+20231205_0000
+******************
+20231205_0030
+******************
+20231205_0100
+******************
+20231205_0130
+******************
+20231205_0200
+******************
+20231205_0230
+******************
+20231205_0300
+******************
+Traceback (most recent call last):
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+            ~~~~~~~~~~~^^^^^
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231205_0330.grib2',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), 'e6777dcb-a7ee-4bd1-bf54-73ba9e60141a']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nfs/home11/ugrad/2022/ro561666/website/nanTest/nan_test.py", line 58, in <module>
+    ds = xr.open_dataset(File)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/api.py", line 570, in open_dataset
+    backend_ds = backend.open_dataset(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 602, in open_dataset
+    store = NetCDF4DataStore.open(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 400, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 347, in __init__
+    self.format = self.ds.data_model
+                  ^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 409, in ds
+    return self._acquire()
+           ^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 403, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 2464, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2027, in netCDF4._netCDF4._ensure_nc_success
+OSError: [Errno -90] NetCDF: file not found: 'https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231205_0330.grib2'
+20231205_0400
+******************
+20231205_0430
+******************
+20231205_0500
+******************
+20231205_0530
+******************
+20231205_0600
+******************
+20231205_0630
+******************
+20231205_0700
+******************
+20231205_0730
+******************
+20231205_0800
+******************
+20231205_0830
+******************
+20231205_0900
+******************
+20231205_0930
+******************
+20231205_1000
+******************
+20231205_1030
+******************
+20231205_1100
+******************
+20231205_1130
+******************
+20231205_1200
+******************
+20231205_1230
+******************
+20231205_1300
+******************
+20231205_1330
+******************
+20231205_1400
+******************
+20231205_1430
+******************
+20231205_1500
+******************
+20231205_1530
+******************
+20231205_1600
+******************
+20231205_1630
+******************
+20231205_1700
+******************
+20231205_1730
+******************
+20231205_1800
+******************
+20231205_1830
+******************
+20231205_1900
+******************
+20231205_1930
+******************
+20231205_2000
+******************
+20231205_2030
+******************
+20231205_2100
+******************
+20231205_2130
+******************
+20231205_2200
+******************
+20231205_2230
+******************
+20231205_2300
+******************
+20231205_2330
+******************
+20231206_0000
+******************
+20231206_0030
+******************
+20231206_0100
+******************
+20231206_0130
+******************
+20231206_0200
+******************
+20231206_0230
+******************
+20231206_0300
+******************
+20231206_0330
+******************
+20231206_0400
+******************
+20231206_0430
+******************
+20231206_0500
+******************
+20231206_0530
+******************
+20231206_0600
+******************
+20231206_0630
+******************
+20231206_0700
+******************
+20231206_0730
+******************
+20231206_0800
+******************
+20231206_0830
+******************
+20231206_0900
+******************
+20231206_0930
+******************
+20231206_1000
+******************
+20231206_1030
+******************
+20231206_1100
+******************
+20231206_1130
+******************
+20231206_1200
+******************
+20231206_1230
+******************
+20231206_1300
+******************
+20231206_1330
+******************
+20231206_1400
+******************
+20231206_1430
+******************
+20231206_1500
+******************
+20231206_1530
+******************
+20231206_1600
+******************
+20231206_1630
+******************
+20231206_1700
+******************
+20231206_1730
+******************
+20231206_1800
+******************
+20231206_1830
+******************
+20231206_1900
+******************
+20231206_1930
+******************
+20231206_2000
+******************
+20231206_2030
+******************
+20231206_2100
+******************
+20231206_2130
+******************
+20231206_2200
+******************
+20231206_2230
+******************
+20231206_2300
+******************
+20231206_2330
+******************
+20231207_0000
+******************
+20231207_0030
+******************
+20231207_0100
+******************
+20231207_0130
+******************
+20231207_0200
+******************
+20231207_0230
+******************
+20231207_0300
+******************
+20231207_0330
+******************
+20231207_0400
+******************
+20231207_0430
+******************
+20231207_0500
+******************
+20231207_0530
+******************
+20231207_0600
+******************
+20231207_0630
+******************
+20231207_0700
+******************
+20231207_0730
+******************
+20231207_0800
+******************
+20231207_0830
+******************
+20231207_0900
+******************
+20231207_0930
+******************
+20231207_1000
+******************
+20231207_1030
+******************
+20231207_1100
+******************
+20231207_1130
+******************
+20231207_1200
+******************
+20231207_1230
+******************
+20231207_1300
+******************
+20231207_1330
+******************
+20231207_1400
+******************
+20231207_1430
+******************
+20231207_1500
+******************
+20231207_1530
+******************
+20231207_1600
+******************
+20231207_1630
+******************
+20231207_1700
+******************
+20231207_1730
+******************
+20231207_1800
+******************
+20231207_1830
+******************
+20231207_1900
+******************
+20231207_1930
+******************
+20231207_2000
+******************
+20231207_2030
+******************
+20231207_2100
+******************
+20231207_2130
+******************
+20231207_2200
+******************
+20231207_2230
+******************
+20231207_2300
+******************
+20231207_2330
+******************
+20231208_0000
+******************
+20231208_0030
+******************
+20231208_0100
+******************
+20231208_0130
+******************
+20231208_0200
+******************
+20231208_0230
+******************
+20231208_0300
+******************
+20231208_0330
+******************
+20231208_0400
+******************
+20231208_0430
+******************
+20231208_0500
+******************
+20231208_0530
+******************
+20231208_0600
+******************
+20231208_0630
+******************
+20231208_0700
+******************
+20231208_0730
+******************
+20231208_0800
+******************
+20231208_0830
+******************
+20231208_0900
+******************
+20231208_0930
+******************
+20231208_1000
+******************
+20231208_1030
+******************
+20231208_1100
+******************
+20231208_1130
+******************
+20231208_1200
+******************
+20231208_1230
+******************
+20231208_1300
+******************
+20231208_1330
+******************
+20231208_1400
+******************
+20231208_1430
+******************
+20231208_1500
+******************
+20231208_1530
+******************
+20231208_1600
+******************

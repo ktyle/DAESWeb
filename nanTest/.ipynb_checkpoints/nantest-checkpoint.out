@@ -1,0 +1,469 @@
+20231117_0100
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+20231117_0130
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+20231117_0200
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+20231117_0230
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+20231117_0300
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+20231117_0330
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+20231117_0400
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+20231117_0430
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+20231117_0500
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+Traceback (most recent call last):
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 211, in _acquire_with_cache_info
+    file = self._cache[self._key]
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+            ~~~~~~~~~~~^^^^^
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231117_0530.grib2',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '73d675f3-ecb0-471b-80bc-7fe38c209fe2']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nfs/home11/ugrad/2022/ro561666/website/nanTest/nan_test.py", line 58, in <module>
+    ds = xr.open_dataset(File)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/api.py", line 570, in open_dataset
+    backend_ds = backend.open_dataset(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 602, in open_dataset
+    store = NetCDF4DataStore.open(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 400, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 347, in __init__
+    self.format = self.ds.data_model
+                  ^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 409, in ds
+    return self._acquire()
+           ^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 403, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 199, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/knight/mamba_aug23/envs/aug23_env/lib/python3.11/site-packages/xarray/backends/file_manager.py", line 217, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 2464, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2027, in netCDF4._netCDF4._ensure_nc_success
+OSError: [Errno -90] NetCDF: file not found: 'https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/NDFD/NWS/CONUS/CONDUIT/NDFD_NWS_CONUS_conduit_2p5km_20231117_0530.grib2'
+20231117_0600
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+20231117_0630
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+20231117_0700
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+20231117_0730
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+20231117_0800
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+20231117_0830
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+20231117_0900
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+20231117_0930
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+20231117_1000
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+20231117_1030
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+20231117_1100
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+20231117_1130
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+20231117_1200
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+20231117_1230
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+20231117_1300
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+20231117_1330
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+20231117_1400
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+20231117_1430
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+20231117_1500
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+20231117_1530
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+20231117_1600
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+20231117_1630
+False
+False
+False
+False
+False
+False
+False
+False
+False
+----------
+20231117_1700
+---------------
+********
+Cloud Cover
+********
+Wind Speed
+********
+Wind Direction
+********
+Weather String
+********
+Dewpoint
+********
+Temperature
+********
+Max temp
+********
+Min temp
+********
+RH
+--------------
+20231117_1730
+---------------
+********
+Cloud Cover
+********
+Wind Speed
+********
+Wind Direction
+********
+Weather String
+********
+Dewpoint
+********
+Temperature
+********
+Max temp
+********
+Min temp
+********
+RH
+--------------
+20231117_1800
+---------------
+********
+Cloud Cover
+********
+Wind Speed
+********
+Wind Direction
+********
+Weather String
+********
+Dewpoint
+********
+Temperature
+********
+Max temp
+********
+Min temp
+********
+RH
+--------------
+20231117_1830
+---------------
+********
+Cloud Cover
+********
+Wind Speed
+********
+Wind Direction
+********
+Weather String
+********
+Dewpoint
+********
+Temperature
+********
+Max temp
+********
+Min temp
+********
+RH
+--------------
