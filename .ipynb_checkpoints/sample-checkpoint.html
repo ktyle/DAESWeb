@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Two Lists Side by Side</title>
+    <title>UAlbany Weather Data and Forecasts</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,6 +14,20 @@
         .section-title {
             color: #46166B;
             text-indent: 30px;
+            margin-top: 8px; 
+            margin-bottom: -5px;
+        }
+        
+        a:link, a:visited, a:active {
+            color: #46166B; 
+            background-color: transparent; 
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: #46166B; 
+            background-color: transparent; 
+            text-decoration: underline;
         }
         
         .container-list {
@@ -25,7 +39,8 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
-            height: 325px;
+            height: auto;
+            max-height: 400px;
         }
 
         .inner-list-1 {
@@ -69,7 +84,7 @@
         .mohawk-img {
             height: auto; 
             width: auto; 
-            max-height: 40vh;
+            max-height: 300px;
             display: block;
             margin: 0 auto;
         }
@@ -80,6 +95,7 @@
             text-align: center;
             margin-top: 10px;
             color: #46166B;
+            font-weight: bolder;
         }
         
         .wx-data {
@@ -105,6 +121,40 @@
             margin-bottom: 1px;
         }
         
+        .forecast-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            list-style-type: none; /* Remove bullet points */
+            background-color: #eee;
+        }
+
+        .forecast-item {
+            display: inline-block;
+            text-align: center;
+            flex: 1;
+            margin: 0 10px;
+        }
+        
+        .forecast-time {
+            height: 16px;
+            font-size: 18px;
+            font-weight: bolder;
+        }
+
+        .forecast-img {
+            width: 150px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .vl {
+            border-left: 1px solid black;
+            height: 275px;
+        }
+        
         @media (max-width: 800px) {
         .container-list {
             display: flex;
@@ -115,7 +165,8 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
-            height: 700px;
+            height: auto;
+            max-height: 750px;
           }
             
         .inner-list-1 {
@@ -131,7 +182,7 @@
             text-align: center;
             flex: 1;
             height: 150px;
-        }  
+          }  
             
         .mohawk-img {
             height: auto; 
@@ -140,60 +191,102 @@
             max-width: 90%;
             display: block;
             margin: 0 auto;
+            font-weight: bolder;
+          }
+        
+        
+        .forecast-img {
+            width: 125px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
           }
         }
     </style>
 </head>
 <body>
-<h1 class="section-title">Current Conditions in Albany, NY</h1>
+<h1 class="section-title">Current Conditions at Albany Internatinal Airport (ALB)</h1>
 <ul class="container-list">
     <li class="inner-list-1">
         <ul class="text-container">
-                <li class="text-item">
-                    <br>
-                    <img class="current-img" src="images/im1.png" alt="Image 1">
-                    <p class="current-wx">Patchy Fog</p>
-                </li>
-                <li class="text-item">
-                    <br>
-                    <u style="font-size: 18px;">Temperature:</u>
-                    <p class="wx-data">32°F</p>
-                    <p class="wx-data-2">0°C</p>
-                </li>
-                <li class="text-item">
-                    <br>
-                    <u style="font-size: 18px;">Dew Point:</u>
-                    <p class="wx-data">16°F</p>
-                    <p class="wx-data-2">-6°C</p>
-                </li>
-            </ul>    
-            <ul class="text-container">
-                <li class="text-item">
-                    <p class="wind-text" style="margin-bottom: -10px;"><u>Wind:</u></p>
-                    <img class="current-img" src="images/transparent_barb.png" alt="Image 1">
-                    <p class="wind-text" style="margin-top: -10px;">S at 4kt</p>
-                </li>
-                <li class="text-item">
-                    <br>
-                    <u style="font-size: 18px;">Humididty:</u>
-                    <p class="wx-data">45%</p>
-                </li>
-                <li class="text-item">
-                    <br>
-                    <u style="font-size: 18px;">Pressure:</u>
-                    <p class="pres-data" style="font-weight: bolder;">1009.2hPa</p>
-                    <p class="pres-data">33.1"</p>
-                </li>
-            </ul> 
+            <li class="text-item">
+                <br>
+                <img class="current-img" src="images/current_wx.png" alt="Image 1">
+                <p class="current-wx">Overcast</p>
+            </li>
+            <li class="text-item">
+                <br>
+                <u style="font-size: 18px;">Temperature:</u>
+                <p class="wx-data">32°F</p>
+                <p class="wx-data-2">0°C</p>
+            </li>
+            <li class="text-item">
+                <br>
+                <u style="font-size: 18px;">Dew Point:</u>
+                <p class="wx-data">30°F</p>
+                <p class="wx-data-2">-1°C</p>
+            </li>
+        </ul>    
+        <ul class="text-container">
+            <li class="text-item">
+                <p class="wind-text" style="margin-bottom: -10px;"><u>Wind:</u></p>
+                <img class="current-img" src="images/transparent_barb.png" alt="Image 1">
+                <p class="wind-text" style="margin-top: -10px;">W at 4kt</p>
+            </li>
+            <li class="text-item">
+                <br>
+                <u style="font-size: 18px;">Humididty:</u>
+                <p class="wx-data">92%</p>
+            </li>
+            <li class="text-item">
+                <br>
+                <u style="font-size: 18px;">Sea-level Pressure:</u>
+                <p class="pres-data" style="font-weight: bolder;">1019.2mb</p>
+                <p class="pres-data">30.1"</p>
+            </li>
+        </ul> 
     </li>
     <li class="inner-list-2">
         <div>
             <br>
-            <img src="images/mohawk.png" alt="Image 1" class="mohawk-img"}>
+            <a href="https://www.atmos.albany.edu/facstaff/ralazear/mohawk/mohawk_2d.html">
+                <img src="images/now.jpg" alt="Image 1" class="mohawk-img"}>
+            </a>
             <p class="mohawk-text">Latest Mohawk Tower Image</p>
         </div>
     </li>
 </ul>
-
+<h1 class="section-title">
+    <a href="https://www.weather.gov/aly/">NWS Albany 2-Day Forecast</a>
+</h1>
+    <ul class="forecast-container">
+        <li class="forecast-item">
+            <p class="forecast-time">Today</p>
+            <img class="forecast-img" src="images/im1.png" alt="Image 1">
+            <p style="height: 45px;">Patchy Fog</p>
+            <p style="font-size: 22px;">High: 34°F</p>
+        </li>
+        <li class="vl"></li>
+        <li class="forecast-item">
+            <p class="forecast-time">Tonight</p>
+            <img class="forecast-img" src="images/im2.png" alt="Image 2">
+            <p style="height: 45px;">Overcast then Chance of Light Rain</p>
+            <p style="font-size: 22px;">Low: 33°F</p>
+        </li>
+        <li class="vl"></li>
+        <li class="forecast-item">
+            <p class="forecast-time">Sunday</p>
+            <img class="forecast-img" src="images/im3.png" alt="Image 3">
+            <p style="height: 45px;">Likely Light Rain then Chance of Light Rain</p>
+            <p style="font-size: 22px;">High: 39°F</p>
+        </li>
+        <li class="vl"></li>
+        <li class="forecast-item">
+            <p class="forecast-time">Sunday Night</p>
+            <img class="forecast-img" src="images/im4.png" alt="Image 4">
+            <p style="height: 45px;">Definite Light Rain</p>
+            <p style="font-size: 22px;">Low: 34°F</p>
+        </li>
+    </ul>
 </body>
 </html>

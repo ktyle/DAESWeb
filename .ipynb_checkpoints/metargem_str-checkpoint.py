@@ -313,9 +313,10 @@ def get_wx_img(wx_str, cloud_cover, wdsp):
        'Light Thunderstorms, Rain': 'NWS_images/wX/thunderstorms/tsra.png', # -TSRA
        'Heavy Thunderstorms, Rain': 'NWS_images/wX/thunderstorms/tsra.png' # +TSRA        
     }
+    
     if wx_str != 'no_wx':
         img_str = Wx_img.get(wx_str)
-    elif wdsp.magnitude > 13.0:
+    elif wdsp > 13:
         if cloud_cover == 0:
             img_str = 'NWS_images/cloud_cover/clear/wind_skc.png'
         elif cloud_cover == 1:
