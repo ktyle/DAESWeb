@@ -1,9 +1,9 @@
-Light Snow
+Light Drizzle
+38°F
+3°C
 31°F
 -1°C
-28°F
--2°C
-N at 6kt
-89%
-1005.5mb
-29.69"
+W at 3kt
+76%
+1011.6mb
+29.87"

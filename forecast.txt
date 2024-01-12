@@ -1,16 +1,16 @@
 Today
-High: 29.9°F
-Definite Moderate Snow
-90%
-Tonight
-Low: 22.9°F
+High: 40.9°F
 Mostly Cloudy
-20%
-Monday
-High: 36.0°F
-Partly Cloudy
-0%
-Monday Night
-Low: 18.0°F
-Mostly Clear
-0%
+Chance of Precipitation: 0%
+Tonight
+Low: 35.0°F
+Definite Moderate Rain then Likely Light Rain
+Chance of Precipitation: 100%
+Saturday
+High: 47.0°F
+Chance of Light Rain Showers then Slight Chance of Light Snow Showers
+Chance of Precipitation: 70%
+Saturday Night
+Low: 25.1°F
+Slight Chance of Light Snow Showers
+Chance of Precipitation: 20%

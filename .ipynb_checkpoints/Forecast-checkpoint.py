@@ -2340,7 +2340,7 @@ for time_step in times12:
     roundedPrecip = round(forecastPrecipNew.item(0), -1)
     precipStr = str(roundedPrecip)
     precipStr = precipStr[:-2]
-    f.write(f'{precipStr}%\n')
+    f.write(f'Chance of Precipitation: {precipStr}%\n')
     
     i=i+1  
 f.close()

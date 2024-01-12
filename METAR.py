@@ -731,7 +731,7 @@ if np.isnan(gust) == True:
     else:
         f.write(f'{wdir_str} at {windsp}kt\n')
 else:
-    print(f'{wdir_str} at {windsp}kt, G{gust}kt\n')
+    f.write(f'{wdir_str} at {windsp}kt, G{gust}kt\n')
 f.write(f'{RH}%\n')
 f.write(f'{slp}mb\n')
 f.write(f'{slpHG}"\n')
