@@ -2349,7 +2349,7 @@ f.close()
 # In[44]:
 
 
-def cc_img(cc, calm): #defien function to get images if there is no weather
+def cc_img(cc, calm): #define function to get images if there is no weather
     if cc == 'Clear': #use photo corresponding to cloud cover
         if calm == True:
             if forecastMaxNew.metpy.time.values == time_step:
@@ -2420,7 +2420,6 @@ def cc_img(cc, calm): #defien function to get images if there is no weather
 wX_list = ['No Weather',
            'Smoke',
            'Blowing Dust',
-           'Blowing_Snow',
            'Haze',
            'Fog',
            'Freezing_Drizzle',
@@ -2431,7 +2430,6 @@ wX_list = ['No Weather',
            'Hail',
            'Frost',
            'Ice Pellets',
-           'Snow_Showers',
            'Snow',
            'Thunderstorms',
            'Blowing Sand']
@@ -2440,23 +2438,17 @@ wX_list = ['No Weather',
 # In[46]:
 
 
-wX_list2 = ['Blowing Snow',
-            'Freezing Drizzle',
+wX_list2 = ['Freezing Drizzle',
             'Freezing Rain',
-            'Rain Showers',
-            'Snow Showers']
+            'Rain Showers']
 
 
 # In[47]:
 
 
 snow1 = {'Snow'}
-snow2 = {'Snow_Showers'}
-snow3 = {'Snow', 'Fog'}
-snow4 = {'Snow_Showers', 'Fog'}
-snow5 = {'Blowing_Snow'}
-snow6 = {'Snow', 'Blowing_Snow'}
-snow7 = {'Snow', 'Thunderstorm'}
+snow2 = {'Snow', 'Fog'}
+snow3 = {'Snow', 'Thunderstorm'}
 
 
 # In[48]:
@@ -2464,9 +2456,7 @@ snow7 = {'Snow', 'Thunderstorm'}
 
 rain_snow1 = {'Rain', 'Snow'}
 rain_snow2 = {'Drizzle', 'Snow'}
-rain_snow3 = {'Rain_Showers', 'Snow_Showers'}
-rain_snow4 = {'Rain_Showers', 'Snow'}
-rain_snow5 = {'Rain', 'Snow Showers'}
+rain_snow3 = {'Rain_Showers', 'Snow'}
 
 
 # In[49]:
@@ -2573,8 +2563,8 @@ smoke = {'Smoke'}
 
 
 #create lists of sets, each list point to one img type
-snow = [snow1, snow2, snow3, snow4, snow5, snow6, snow7]
-rain_snow = [rain_snow1, rain_snow2, rain_snow3, rain_snow4, rain_snow5]
+snow = [snow1, snow2, snow3]
+rain_snow = [rain_snow1, rain_snow2, rain_snow3]
 rain_ice = [rain_ice1, rain_ice2]
 freezing_rain = [freezing_rain1, freezing_rain2]
 rain_freezing_rain = [rain_freezing_rain1, rain_freezing_rain2, rain_freezing_rain3, rain_freezing_rain4]
@@ -2601,10 +2591,7 @@ def fix_wx(wx_test): #allows us to differntiate things like 'Blowing Snow' from 
     for wX in wX_list2:
         word_check = contains_word(wx_test, wX)
 
-        if wX == 'Blowing Snow' and word_check == True:
-            new_wx = wx_test.replace('Blowing Snow', 'Blowing_Snow')
-
-        elif wX == 'Freezing Drizzle' and word_check == True:
+        if wX == 'Freezing Drizzle' and word_check == True:
             new_wx = wx_test.replace('Freezing Drizzle', 'Freezing_Drizzle')
 
         elif wX == 'Freezing Rain' and word_check == True:
@@ -2612,9 +2599,6 @@ def fix_wx(wx_test): #allows us to differntiate things like 'Blowing Snow' from 
 
         elif wX == 'Rain Showers' and word_check == True:
             new_wx = wx_test.replace('Rain Showers', 'Rain_Showers')
-
-        elif wX == 'Snow Showers' and word_check == True:
-            new_wx = wx_test.replace('Snow Showers', 'Snow_Showers')
 
         else:
             new_wx = wx_test
