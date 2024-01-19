@@ -1,16 +1,16 @@
 Today
-High: 40.9°F
-Mostly Cloudy
-Chance of Precipitation: 0%
+High: 22.0°F
+Chance of Light Snow Showers then Slight Chance of Light Snow Showers
+Chance of Precipitation: 40%
 Tonight
-Low: 35.0°F
-Definite Moderate Rain then Likely Light Rain
-Chance of Precipitation: 100%
+Low: 9.0°F
+Overcast
+Chance of Precipitation: 20%
 Saturday
-High: 47.0°F
-Chance of Light Rain Showers then Slight Chance of Light Snow Showers
-Chance of Precipitation: 70%
-Saturday Night
-Low: 25.1°F
+High: 16.1°F
 Slight Chance of Light Snow Showers
+Chance of Precipitation: 30%
+Saturday Night
+Low: 9.0°F
+Mostly Cloudy
 Chance of Precipitation: 20%
