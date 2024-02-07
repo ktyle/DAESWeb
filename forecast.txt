@@ -1,16 +1,16 @@
 Today
-High: 22.0°F
-Chance of Light Snow Showers then Slight Chance of Light Snow Showers
-Chance of Precipitation: 40%
+High: 36.9°F
+Clear
+Chance of Precipitation: 0%
 Tonight
-Low: 9.0°F
-Overcast
-Chance of Precipitation: 20%
-Saturday
-High: 16.1°F
-Slight Chance of Light Snow Showers
-Chance of Precipitation: 30%
-Saturday Night
-Low: 9.0°F
-Mostly Cloudy
-Chance of Precipitation: 20%
+Low: 20.9°F
+Mostly Clear
+Chance of Precipitation: 0%
+Wednesday
+High: 40.9°F
+Partly Cloudy
+Chance of Precipitation: 0%
+Wednesday Night
+Low: 22.9°F
+Mostly Clear
+Chance of Precipitation: 0%

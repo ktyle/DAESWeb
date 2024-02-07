@@ -275,9 +275,10 @@
         width: 50%;
         height: 15vh;
         min-height: 100px;
+        max-height: 200px;
         position: relative;
         min-width: 500px;
-        max-wdith: 850px;
+        max-width: 1200px;
         align-items: center;
     }
         

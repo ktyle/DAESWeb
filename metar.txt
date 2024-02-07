@@ -1,9 +1,9 @@
-Overcast
-23°F
--5°C
-17°F
+Mostly Clear
+29°F
+-2°C
+18°F
 -8°C
-NW at 4kt
-78%
-1013.0mb
-29.91"
+N at 7kt
+63%
+1026.5mb
+30.31"
