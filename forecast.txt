@@ -1,16 +1,16 @@
 Today
-High: 36.9°F
-Clear
-Chance of Precipitation: 0%
-Tonight
-Low: 20.9°F
+High: 52.1°F
 Mostly Clear
-Chance of Precipitation: 0%
-Wednesday
-High: 40.9°F
+Chance of Precipitation: 10%
+Tonight
+Low: 27.9°F
 Partly Cloudy
 Chance of Precipitation: 0%
-Wednesday Night
-Low: 22.9°F
-Mostly Clear
-Chance of Precipitation: 0%
+Tuesday
+High: 58.0°F
+Mostly Cloudy then Slight Chance of Light Rain Showers
+Chance of Precipitation: 30%
+Tuesday Night
+Low: 47.0°F
+Likely Light Rain Showers then Definite Light Rain Showers
+Chance of Precipitation: 80%
