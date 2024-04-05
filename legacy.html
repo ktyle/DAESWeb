@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UAlbany DAES Weather Data and Forecasts</title>
+    <title>Department of Atmospheric and Environmental Sciences Legacy Weather Products</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;300&display=swap" rel="stylesheet">
@@ -417,12 +417,6 @@
         height: 80px;
     }
     
-    /*.real-time-product-title {
-        color: #46166B;
-        text-align: center;
-        margin-top: 8px; 
-        margin-bottom: 16px;
-    }*/
     /*start of visualization products section*/
     .real-time-product-title {
         font-family: ualbFont;
@@ -517,7 +511,127 @@
         border: 2px solid #46166B;
         cursor: pointer;
     }
-    
+
+    .content-body {
+        width: 100%;
+        height: 85vh;
+        min-height: 700px;
+    }
+
+    .sidebar {
+        display: inline-block;
+        background-color: #eee;
+        width: 400px;
+        min-width: 200px;
+        height: 100%;
+        margin: 0;
+        float: left;
+    }
+
+    .main-content {
+        display: inline-block;
+        width: 72%;
+        height: 100%;
+        margin: 0;
+        float: right;
+        /*background-color: #eee;*/
+    }
+
+    .sidebar-list {
+        font-size: 24px;
+        background-color: #eee;
+        width: 80%;
+        line-height: 24px;
+        list-style-type: none;
+        padding-left: 50px;
+    }
+
+    .sidebar-list-object {
+        border-bottom: 3px solid #e0e0e0;
+        text-indent: 15px;
+        color: #46166B;
+    }
+
+    .sidebar-list-object:hover {
+        color: black;
+        cursor: pointer;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+        
+    .grid-item {
+        padding: 10px;
+        text-align: center;
+    }
+        
+    .grid-item img {
+        border: 1px solid #000;
+        max-width: 80%;
+        height: auto;
+    }
+
+    .sfc-button {
+        width: 95%;
+        height: 60px;
+        color: white;
+        background-color: #46166B;
+        border: none;
+        font-size: 24px;
+        font-family: ualbFont;
+        cursor: pointer;
+    }
+
+    .loop-container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        text-align: center;
+        height: 70px;
+    }
+
+    .loop-controller {
+        border: none;
+        text-align: center;
+        margin-block-end: 0;
+        margin-block-start: 0;
+        background-color: #eee;
+        color: #46166B;
+        font-size: 50px;
+        font-family: ualbFont;
+    }
+
+    .loop-controller:hover {
+        color: #ffc107;
+        cursor: pointer;
+        transition-duration: .25s;
+    }
+
+    .play-pause {
+        border: none;
+        text-align: center;
+        margin-block-end: 10px;
+        margin-block-start: 10px;
+        background-color: #eee;
+        color: #46166B;
+        font-size: 30px;
+        font-family: ualbFont;
+    }
+
+    .play-pause:hover {
+        color: #ffc107;
+        cursor: pointer;
+        transition-duration: .25s;
+    }
+
+    .break {
+        height: 1px;
+        background-color: black; 
+        width: 100%; 
+        margin: auto;
+    }
+        
     @media (min-width: 1500px) {
     
         .forecast-container {
@@ -540,7 +654,7 @@
     }
     
     @media (max-width: 1100px) {
-    
+
         .header-img {
             position: relative;
             height: auto;
@@ -842,563 +956,264 @@
 </div>
 <div class="header-container">
     <div class="header-img-container">
-        <img class="header-img" src="images/cropped_image.jpeg">
+        <img class="header-img" src="images/difax_crop.jpeg">
         <div class="header-text-container">
-            <h1 class="header-title">Albany Weather Data and Forecasts</h1>
+            <h1 class="header-title">DAES Legacy Weather Products</h1>
             <p class="header-body">
             A suite of weather and climate products produced by UAlbany students, faculty, and alumni.</p>
         </div>
     </div>
 </div>
-<ul class="current-conditions-container">
-    <li class="section-title-container">
-        <br>
-        <h1 class="section-title" style="margin-bottom: 10px;">Current Conditions at Albany International Airport</h1>
-    </li>
-    <ul class="current-conditions-container-list">
-        <li class="inner-list-1">
-            <ul class="text-container">
-                <li class="text-item">
-                    <br>
-                    <img class="current-img" src="images/current_wx.png" alt="Image 1" id="wxImg">
-                    <p class="current-wx" id="wxText"></p>
-                </li>
-                <li class="text-item">
-                    <br>
-                    <u style="font-size: 18px;">Temperature:</u>
-                    <p class="wx-data" id="tmpF"></p>
-                    <p class="wx-data-2" id="tmpC"></p>
-                </li>
-                <li class="text-item">
-                    <br>
-                    <u style="font-size: 18px;">Dew Point:</u>
-                    <p class="wx-data" id="dewpointF"></p>
-                    <p class="wx-data-2" id="dewpointC"></p>
-                </li>
-                <li class="text-item">
-                    <br>
-                    <u style="font-size: 18px;">Humididty:</u>
-                    <p class="wx-data" id="RH"></p>
-                </li>
-            </ul>
-            <br>
-            <ul class="text-container">
-                <li class="text-item">
-                    <p class="wind-text" style="margin-bottom: 0px;"><u>Wind:</u></p>
-                    <img class="current-img" src="images/transparent_barb.png" alt="Image 1">
-                    <p class="wind-text" style="margin-top: 0px;">
-                        <?php
-                        $myFile = "metar.txt";
-                        $lines = file($myFile);//file in to an array
-                        echo $lines[5];
-                        ?>
-                    </p>
-                </li>
-                <li class="text-item">
-                    <br>
-                    <u style="font-size: 18px;">Station Pressure:</u>
-                    <p class="wx-data" style="font-weight: bolder;" id="presHg"></p>
-                </li>
-                <li class="text-item">
-                    <br>
-                    <u style="font-size: 18px;">Sea-Level Pressure:</u>
-                    <p class="pres-data" style="font-weight: bolder;" id="slphPa"></p>
-                </li>
-                <li class="text-item">
-                    <br>
-                    <u style="font-size: 18px;">Visibility:</u>
-                    <p class="pres-data" style="font-weight: bolder;" id="vis"></p>
-                </li>
-            </ul> 
-        </li>
-        <li class="inner-list-2">
-            <ul class="img-gallery">
-                <li class="gallery-button-container" style="margin-left: auto;">
-                    <button class="gallery-button" id="prevButton">&#8249;</button>
-                </li>
-                <li class="gallery-img-container">
-                    <br>
-                    <a id="changingLink" href="https://www.atmos.albany.edu/facstaff/ralazear/mohawk/mohawk_2d.html" 
-                    target="_blank">
-                        <img id="changingImage" src="images/now.jpg" alt="Image 1" class="mohawk-img"}>
-                    </a>
-                    <p id="changingText" class="mohawk-text">Latest Mohawk Tower Image</p>
-                </li>
-                <li class="gallery-button-container" style="margin-right: auto;">
-                    <button class="gallery-button" id="nextButton">&#8250;</button>
-                </li>
-            </ul>
-        </li>
-    </ul>
-</ul>
-<div class="padding"></div>
-<div class="section-title-container">
-    <a class="section-title-link" href="https://www.weather.gov/aly/">NWS Albany 2-Day Forecast</a>
+<div class="content-body" id="obs-sounding-section">
+    <div class="main-content" style="float: left; width: 40%;">
+    <h1 class="section-title" style="margin-bottom: 0;">Observed Soundings</h1>
+    <img src="sounding_map.png" style="width: 600px; margin-left: 50px; position: relative; z-index: 1;" usemap="#sounding-map">
+    <map id="please-map" name="sounding-map">
+        <area shape="circle" coords="184,210,6" alt="ABQ" onclick="changeSounding('ABQ')" style="cursor: pointer;">
+        <area shape="circle" coords="271,88,6" alt="ABR" onclick="changeSounding('ABR')" style="cursor: pointer;">
+        <area shape="circle" coords="492,101,6" alt="ALB" onclick="changeSounding('ALB')" style="cursor: pointer;">
+        <area shape="circle" coords="235,214,6" alt="AMA" onclick="changeSounding('AMA')" style="cursor: pointer;">
+        <area shape="circle" coords="391,89,6" alt="APX" onclick="changeSounding('APX')" style="cursor: pointer;">
+        <area shape="circle" coords="249,70,6" alt="BIS" onclick="changeSounding('BIS')" style="cursor: pointer;">
+        <area shape="circle" coords="449,106,6" alt="BUF" onclick="changeSounding('BUF')" style="cursor: pointer;">
+    </map>
+
+    <script>
+        var today = new Date();
+        var hh = String(today.getUTCHours()).padStart(2, '0');
+        var dd = String(today.getUTCDate()).padStart(2, '0');
+        var mm = String(today.getUTCMonth() + 1).padStart(2, '0');
+        var yy = String(today.getUTCFullYear()).substring(2);
+
+        if (hh >= 15) {
+            var sounding_time = yy + mm + dd + "-12Z"
+        } else if (hh < 4) {
+            var sounding_time = yy + mm + (dd-1) + "-12Z"
+        } else {
+            var sounding_time = yy + mm + dd + "-00Z"
+        };
+        
+        function changeSounding(areaName) {
+            const imgElement = document.getElementById('changingImage');
+            imgElement.src = "https://www.atmos.albany.edu/gopher-local/sounding/" + areaName + "-" + sounding_time +".gif";
+
+            document.getElementById("sounding-site").innerHTML = areaName;
+        };
+    </script>
+
+    </div>
+    <div class="main-content" style="float: right; width: 60%;">
+        <h1 id="sounding-site" class="section-title" style="margin-bottom: 0; margin-left: 75px;">ALB</h1>
+        <img src="ALB-latest.gif" style="width: 90%; float: right; position: relative; z-index: -1;" id="changingImage">
+    </div>
 </div>
-<ul class="forecast-container">
-    <li class="forecast-item">
-        <p class="forecast-time" id="date1"></p>
-        <img class="forecast-img" src="images/im1.png" alt="Image 1" id="img1">
-        <p class="forecast-string" id="wx1"></p>
-        <p id="temp1" style="font-size: 22px;"></p>
-    </li>
-    <li class="vl"></li>
-    <li class="forecast-item">
-        <p class="forecast-time" id="date2"></p>
-        <img class="forecast-img" src="images/im2.png" alt="Image 2" id="img2">
-        <p class="forecast-string" id="wx2"></p>
-        <p id="temp2" style="font-size: 22px;"></p>
-    </li>
-    <li class="vl"></li>
-    <li class="forecast-item">
-        <p class="forecast-time" id="date3"></p>
-        <img class="forecast-img" src="images/im3.png" alt="Image 3" id="img3">
-        <p class="forecast-string" id="wx3"></p>
-        <p id="temp3" style="font-size: 22px;"></p>
-    </li>
-    <li class="vl"></li>
-    <li class="forecast-item">
-        <p class="forecast-time" id="date4"></p>
-        <img class="forecast-img" src="images/im4.png" alt="Image 4" id="img4">
-        <p class="forecast-string" id="wx4"></p>
-        <p id="temp4" style="font-size: 22px;"></p>
-    </li>
-</ul>
-<div class="padding"></div>
-<div id="main" style="width: 96%; height: 400px; margin: auto;"></div>
-<script type="module">
-import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
+<div class="padding" style="height: 40px;"></div>
+<div class="break"></div>
+<div class="content-body" id="forecast-sounding-section">
+    <div class="sidebar" style="height: 100%; width: 400px;">
+        <h1 class="section-title" style="margin-bottom: 12px; padding-left: 20px;">Forecast Soundings</h1>
+        <img src="forecast_sounding_map2.png" style="width: 350px; margin-left: 25px;" usemap="#forecast-sounding-map">
+        <map id="forecast-map" name="forecast-sounding-map">
+            <area shape="circle" coords="267.5,132.5,5" alt="alb" onclick="changeForecastSounding('alb')" style="cursor: pointer;">
+            <area shape="circle" coords="175,63,5" alt="art" onclick="changeForecastSounding('art')" style="cursor: pointer;">
+            <area shape="circle" coords="313,165,5" alt="baf" onclick="changeForecastSounding('baf')" style="cursor: pointer;">
+            <area shape="circle" coords="315,177,5" alt="bdl" onclick="changeForecastSounding('bdl')" style="cursor: pointer;">
+            <area shape="circle" coords="291,34.5,5" alt="btv" onclick="changeForecastSounding('btv')" style="cursor: pointer;">
+            <area shape="circle" coords="62.5,121,5" alt="buf" onclick="changeForecastSounding('buf')" style="cursor: pointer;">
+            <area shape="circle" coords="254,249,5" alt="ewr" onclick="changeForecastSounding('ewr')" style="cursor: pointer;">
+            <area shape="circle" coords="275,99,5" alt="gfl" onclick="changeForecastSounding('gfl')" style="cursor: pointer;">
+            <area shape="circle" coords="266.5,244,5" alt="lga" onclick="changeForecastSounding('lga')" style="cursor: pointer;">
+            <area shape="circle" coords="265,196,5" alt="pou" onclick="changeForecastSounding('pou')" style="cursor: pointer;">
+            <area shape="circle" coords="106,112,5" alt="roc" onclick="changeForecastSounding('roc')" style="cursor: pointer;">
+            <area shape="circle" coords="301,87.5,5" alt="rut" onclick="changeForecastSounding('rut')" style="cursor: pointer;">
+            <area shape="circle" coords="171,113,5" alt="syr" onclick="changeForecastSounding('syr')" style="cursor: pointer;">
+            <area shape="circle" coords="258,239,5" alt="teb" onclick="changeForecastSounding('teb')" style="cursor: pointer;">
+            <area shape="circle" coords="201,111.25,5" alt="uca" onclick="changeForecastSounding('uca')" style="cursor: pointer;">
+            <area shape="circle" coords="26,78.5,5" alt="yyz" onclick="changeForecastSounding('yyz')" style="cursor: pointer;">
+        </map>
+        <script>
+            var site = 'alb'
+            function changeForecastSounding(siteName) {
+                site = siteName;
 
-const data = await d3.csv("ALB_obs_fore.csv");
-var length = data.length;
-console.log(data);
-
-var times = [];
-var temps = [];
-var dewps = [];
-var wdsps = [];
-var wdchs = [];
-
-for(let i = 0; i < length; i++) {
-    let time = data[i].Time;
-    //time = time.substring(0, time.length -12);
-    times.push(time);
-    
-    let temp = data[i].T;
-    temps.push(temp);
-    
-    let dewp = data[i].Td;
-    dewps.push(dewp);
-
-    let wdsp = data[i].Wind;
-    wdsps.push(wdsp);
-
-    let wdch = data[i].WindChill;
-    wdchs.push(wdch);
-}
-console.log(temps);
-console.log(times);
-console.log(wdsps);
-console.log(wdchs);
-
-var chartDom = document.getElementById('main');
-var myChart = echarts.init(chartDom);
-var option;
-
-option = {
-  title: {
-    text: 'ALB 24-hour Observations and 24-hour Hour Forecast'
-  },
-  tooltip: {
-    trigger: 'axis'
-  },
-  legend: {
-    data: ['Temperature', 'Dewpoint', 'Wind Chill']
-  },
-  grid: {
-    left: '3%',
-    right: '4%',
-    bottom: '3%',
-    containLabel: true
-  },
-  toolbox: {
-    feature: {
-      saveAsImage: {}
-    }
-  },
-  xAxis: {
-    type: 'category',
-    boundaryGap: false,
-    data: times,
-  },
-  yAxis: {
-    type: 'value',
-    axisLabel: {
-      formatter: '{value} °F'
-  }
-  },
-  series: [
-    {
-      name: 'Temperature',
-      data: temps,
-      type: 'line',
-      color: 'red'
-    },
-    
-    {
-      name: 'Dewpoint',
-      data: dewps,
-      type: 'line',
-      color: 'green'
-    },
-
-    {
-      name: 'Wind Chill',
-      data: wdchs,
-      type: 'line',
-      color: 'blue'
-    }
-  ]
-};
-
-option && myChart.setOption(option);
-</script>
-<div class="padding"></div>
-<div style="width: 100%; height: auto; text-align: center; padding-bottom: 16px;">
-    <a class="real-time-product-title" 
-    href="https://www.atmos.albany.edu/student/abentley/realtime.html">Alicia M. Bentley&#8217;s Real-time GFS Maps</a> 
-</div>
-<ul class ="img-gallery" style="max-width: 2250px; margin: auto;">
-    <li class="gallery-button-container" style="margin-right: 0;">
-        <button id="abPrevButton" class="gallery-button-large">&#8249;</button>
-    </li>
-    <li class="ab-gallery">
-        <a id="abLink" 
-         href="https://www.atmos.albany.edu/student/abentley/realtime/standard.php?domain=northamer&variable=850_thetae">
-            <img id="abImage" src="images/abentley/850_thetae_57.png" alt="Image 1" class="gfs-img"}>
-        </a>
-    </li>
-    <li class="gallery-button-container" style="margin-left: 0;">
-        <button id="abNextButton" class="gallery-button-large">&#8250;</button>
-    </li>
-</ul>
-<div class="padding"></div>
-<div class="padding"></div>
-<ul class="legacy-background">
-    <li class="legacy-products">
-        <a href="https://www.atmos.albany.edu/student/rolsen/legacy.html" target="_blank">
-        <img id="darkImage" src="images/mos_crop.png" class="legacy-img">
-        <img id="lightImage" src="images/mos_crop_r.png" class="legacy-img">
-        <div id="legacyButton" class="legacy-products-text">
-            <p style="text-align: center;">UAlbany DAES Legacy Products</p>
+                document.getElementById("forecast-sounding-site").innerHTML = siteName;
+            };
+        </script>
+        <div class="loop-container">
+            <div>
+                <button type="button" class="loop-controller" id="slow-down">&#171</button>
+            </div>
+            <div>
+                <button type="button" class="loop-controller" id="step-backward">&#8249</button>
+            </div>
+            <div>
+                <button type="button" class="play-pause" id="play-button">&#9654;</button>
+            </div>
+            <div>
+                <button type="button" class="loop-controller" id="step-forward">&#8250</button>
+            </div>
+            <div>
+                <button type="button" class="loop-controller" id="speed-up">&#187</button>
+            </div>
         </div>
-        </a>
-    </li>
-</ul>
-<div class="padding">
-<script>
-//current conditions image gallery
-const contentTriplets = [
-    {image: "images/now.jpg", link: "https://www.atmos.albany.edu/facstaff/ralazear/mohawk/mohawk_2d.html",
-     text: "Latest Mohawk Tower Image"},
-    {image: "images/latest.gif", link: "https://www.atmos.albany.edu/weather/radar/base/ENX/animate.html",
-     text: "Latest KENX Radar Image"},
-    {image: "images/00latestvis-nd.gif", link: "https://www.atmos.albany.edu/weather/satellite/ne/00latestvis-nd.gif",
-     text: "Latest Visible Satellite Image"},
-    {image: "images/stationmap.png", link: "http://www.nysmesonet.org", text: "Latest NYS Mesonet Observations"}
-]; //image, text and, link for gallery
+        <div class="sidebar-list-object" style="border-bottom: 0; font-size: 24px;">
+            <p style="margin-bottom: 12px; margin-top: 12px;">Model</p>
+        </div>
+        <div class="grid-container">
+            <div class="grid-item">
+                <button type="button" id="nam-button" class="sfc-button" style="color: #46166B; background-color: #ffc107;">NAM</button>
+            </div>
+            <div class="grid-item">
+                <button type="button" id="gfs-button" class="sfc-button">GFS</button>
+            </div>
+        </div>
+        <div class="grid-container">
+            <div class="grid-item">
+                <p style="margin-bottom: 12px; margin-top: 24px;">Frame</p>
+                <p class="section-title" style="padding-left: 0; margin: 0;" id="counter">1</p>
+            </div>
+            <div class="grid-item">
+                <p style="margin-bottom: 12px; margin-top: 24px;">Animation Speed</p>
+                <p class="section-title" style="padding-left: 0; margin: 0;" id="interval-counter">5 fps</p>
+            </div>
+        </div>
+    </div>
+    <div class="main-content" style="width: 60%;">
+        <h1 id="forecast-sounding-site" class="section-title" style="margin-bottom: 0; margin-left: 75px; text-transform: uppercase;">ALB</h1>
+        <img id="forecast-sounding" src="https://www.atmos.albany.edu/products/namsndg/alb.gif.0" style="height: 85%; margin: auto; display: block;">
+    </div>
+</div>
+<div class="break"></div>
+<div class="content-body" id="sfc-map-section">
+    <div class="sidebar">
+        <h1 class="section-title" style="margin-bottom: 12px;">Surface Maps</h1>
+        <div class="loop-container">
+            <div>
+                <button type="button" class="loop-controller" id="slow-down-2">&#171</button>
+            </div>
+            <div>
+                <button type="button" class="loop-controller" id="step-backward-2">&#8249</button>
+            </div>
+            <div>
+                <button type="button" class="play-pause" id="play-button-2">&#9654;</button>
+            </div>
+            <div>
+                <button type="button" class="loop-controller" id="step-forward-2">&#8250</button>
+            </div>
+            <div>
+                <button type="button" class="loop-controller" id="speed-up-2">&#187</button>
+            </div>
+        </div>
+        <div class="sidebar-list-object" style="border-bottom: 0; font-size: 24px;">
+            <p style="margin-bottom: 12px; margin-top: 24px;">Region</p>
+        </div>
+        <div class="grid-container">
+            <div class="grid-item">
+                <button type="button" class="sfc-button" id="us-button" style="color: #46166B; background-color: #ffc107;">United Sates</button>
+            </div>
+            <div class="grid-item">
+                <button type="button" class="sfc-button" id="ny-button">New York</button>
+            </div>
+        </div>
+        <div class="sidebar-list-object" style="border-bottom: 0; font-size: 24px;">
+            <p style="margin: 12px">Variable</p>
+        </div>
+        <div class="grid-container">
+            <div class="grid-item">
+                <button type="button" class="sfc-button" id="theta-button" style="color: #46166B; background-color: #ffc107;">Potential Temp</button>
+            </div>
+            <div class="grid-item">
+                <button type="button" class="sfc-button" id="mixr-button">Mixing Ratio</button>
+            </div>
+        </div>
+        <div class="grid-container">
+            <div class="grid-item">
+                <p style="margin-bottom: 12px; margin-top: 24px;">Frame</p>
+                <p class="section-title" style="padding-left: 0; margin: 0;" id="counter-2">1</p>
+            </div>
+            <div class="grid-item">
+                <p style="margin-bottom: 12px; margin-top: 24px;">Animation Speed</p>
+                <p class="section-title" style="padding-left: 0; margin: 0;" id="interval-counter-2">5 fps</p>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <img src="https://www.atmos.albany.edu/products/thetaq_gif/latest_us.theta.gif" id="sfc-map" style="height: 100%; margin: auto; display: block;">
+    </div>
+</div>
+<div class="break"></div>
+<div class="content-body" id="sat-radar-section">
+    <h1 class="section-title">Satellite & Radar</h1>
+    <div class="grid-container">
+        <div class="grid-item">
+            <a href="https://www.atmos.albany.edu/weather/satellite/ne/00latestvis-nd.gif" id="satellite-link">
+                <img src="https://www.atmos.albany.edu/weather/satellite/ne/00latestvis-nd.gif" style="height: 75%;" id="satellite-img">
+            </a>
+            <p style="color: #46166B; font-size: 20px;" id="satellite-text">Latest Visible Satellite Image</p>
+            <div class="grid-container" style="width: 80%; margin: auto;">
+            <div class="grid-item">
+                <button type="button" class="sfc-button" id="vis-button" style="color: #46166B; background-color: #ffc107;">Visible</button>
+            </div>
+            <div class="grid-item">
+                <button type="button" class="sfc-button" id="ir-button">Infared</button>
+            </div>
+        </div>
+        </div>
+        <div class="grid-item">
+            <a href="https://www.atmos.albany.edu/weather/radar/base/ENX/animate.gif" id="radar-link">
+                <img src="https://www.atmos.albany.edu/weather/radar/base/ENX/animate.gif" style="height: 75%;" id="radar-img">
+            </a>
+            <p style="color: #46166B; font-size: 20px;" id="radar-text">Latest KENX Reflectivity Loop</p>
+            <div class="grid-container" style="width: 80%; margin: auto;">
+            <div class="grid-item">
+                <button type="button" class="sfc-button" id="kenx-loop-button" style="color: #46166B; background-color: #ffc107;">Loop</button>
+            </div>
+            <div class="grid-item">
+                <button type="button" class="sfc-button" id="kenx-img-button">Image</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<div class="padding" style="height: 40px;"></div>
+<div class="break"></div>
+<div class="content-body" id="text-section">
+    <div class="sidebar" style="width: 500px; height: 100vh;">
+        <h1 class="section-title">Text Products</h1>
+        <ul class="sidebar-list">
+            <li class="sidebar-list-object" id="FPUS03"><p>NWS Albany Forecast Discussion</p></li>
+            <li class="sidebar-list-object" id="zone"><p>Albany Zone Forecast</p></li>
+            <li class="sidebar-list-object" id="FPUS03"><p>Hourly Weather Roundup</p></li>
+            <li class="sidebar-list-object" id="eta.mos"><p>Albany NAM MOS</p></li>
+            <li class="sidebar-list-object" id="avn.mos"><p>Short-range Albany GFS MOS</p></li>
+            <li class="sidebar-list-object" id="mrf.mos"><p>Long-range Albany GFS MOS</p></li>
+            <li class="sidebar-list-object" id="FPUS03"><p>Albany LAMP MOS</p></li>
+            <li class="sidebar-list-object" id="CSUS02"><p>Daily Climatology Report</p></li>
+            <li class="sidebar-list-object" id="FPUS03"><p>KALB 24-hour Observations</p></li>
+        </ul>
+    </div>
+    <div id="text-product"></div>
 
-let currentIndex = 0;
-
-function changeContent() {
-    const imgElement = document.getElementById('changingImage');
-    const linkElement = document.getElementById('changingLink');
-    const textElement = document.getElementById('changingText');
-
-    const currentTriplet = contentTriplets[currentIndex];
-    imgElement.src = currentTriplet.image;
-    linkElement.href = currentTriplet.link;
-    textElement.innerText = currentTriplet.text;
-}
-
-function showPrevImage() {
-    currentIndex = (currentIndex - 1 + contentTriplets.length) % contentTriplets.length;
-    changeContent();
-} //function to show the previous image in the gallery
-
-function showNextImage() {
-    currentIndex = (currentIndex + 1) % contentTriplets.length;
-    changeContent();
-} //function to show next image in the image gallery
-
-function setImgInterval() {
-    galleryInterval = setInterval(showNextImage, 4000);
-} //interval to automatically switch out gallery images
-
-function clearImgInterval() {
-    clearInterval(galleryInterval);
-} //function to clear interval (used when stopping gallery from changing on hover)
-
-document.getElementById('prevButton').addEventListener('click', showPrevImage); //next button
-document.getElementById('nextButton').addEventListener('click', showNextImage); //last button
-
-document.getElementById('changingImage').addEventListener('mouseover', clearImgInterval); //pasue interval when hovered
-document.getElementById('changingImage').addEventListener('mouseout', setImgInterval); //restart interval on mouse leave
-
-galleryInterval = setInterval(showNextImage, 4000); //runs next img function every 4 seconds
-</script>
-<script>
-//alicia bentley image gallery
-const imgLinkPair = [
-    {image: "images/abentley/850_thetae_57.png", 
-     link: "https://www.atmos.albany.edu/student/abentley/realtime/standard.php?domain=northamer&variable=850_thetae"},
-    {image: "images/abentley/6hprecip_57.png", 
-     link: "https://www.atmos.albany.edu/student/abentley/realtime/standard.php?domain=northamer&variable=6hprecip"},
-    {image: "images/abentley/IVT_conv_57.png", 
-     link: "https://www.atmos.albany.edu/student/abentley/realtime/standard.php?domain=northamer&variable=IVT_conv"},
-    {image: "images/abentley/rel_vort_57.png", 
-     link: "https://www.atmos.albany.edu/student/abentley/realtime/standard.php?domain=northamer&variable=rel_vort"},
-    {image: "images/abentley/irro_wind_57.png", 
-     link: "https://www.atmos.albany.edu/student/abentley/realtime/subtrop.php?domain=northamer&variable=irro_wind"},
-    {image: "images/abentley/330K_isen_57.png", 
-     link: "https://www.atmos.albany.edu/student/abentley/realtime/subtrop.php?domain=northamer&variable=330K_isen"}
-];
-
-let abCurrentIndex = 0;
-
-function abChangeContent() {
-    const abImgElement = document.getElementById('abImage');
-    const abLinkElement = document.getElementById('abLink');
-
-    const currentPair = imgLinkPair[abCurrentIndex];
-    abImgElement.src = currentPair.image;
-    abLinkElement.href = currentPair.link;
-}
-
-function abShowPrevImage() {
-    abCurrentIndex = (abCurrentIndex - 1 + imgLinkPair.length) % imgLinkPair.length;
-    abChangeContent();
-}
-
-function abShowNextImage() {
-    abCurrentIndex = (abCurrentIndex + 1) % imgLinkPair.length;
-    abChangeContent();
-}
-
-document.getElementById('abPrevButton').addEventListener('click', abShowPrevImage);
-document.getElementById('abNextButton').addEventListener('click', abShowNextImage);
-
-setInterval(abShowNextImage, 3000);    
-</script>
-<script>
-    // Add event listeners for hovering over legacy button
-    const legacyButton = document.getElementById('legacyButton');
-    const defaultImage = document.getElementById('darkImage');
-    const hoveredImage = document.getElementById('lightImage');
-
-    // Set transition property for opacity in CSS for a smoother fade effect
-    darkImage.style.transition = 'opacity 0.5s ease-in-out';
-    lightImage.style.transition = 'opacity 0.5s ease-in-out';
-
-    // Set initial opacity values
-    darkImage.style.opacity = 0;
-    lightImage.style.opacity = 1;
-
-    legacyButton.addEventListener('mouseover', function () {
-        darkImage.style.opacity = 1;
-        lightImage.style.opacity = 0;
-    }); //switch opacity on hover
-
-    legacyButton.addEventListener('mouseout', function () {
-        darkImage.style.opacity = 0;
-        lightImage.style.opacity = 1;
-    }); //switch opacity back on mouse out
-</script>
-<script>
-//Use NWS Api to get the forecast data, ignore the fact you spent a month wriitng python code to do this exact thing
-const apiUrl = "https://api.weather.gov/points/42.68,-73.81"
-
-// Make first request to the NWS API 
-fetch(apiUrl, {
-    headers: {
-        'User-Agent': 'just testing this out (rwolsen@albany.edu)', // Replace with your app's user agent
-        'Accept': 'application/geo+json'
-    }
+    <script>
+    //display text files
+    var textFileURL = 'https://www.atmos.albany.edu/gopher-local/albany/FPUS03'
+    fetch(textFileURL)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.text();
     })
-    .then(response => response.json())
-    .then(data => {
-        // Extract forecast information from the response
-        var forecastURL = data.properties.forecast;
-
-        // Log the forecast to the console
-        console.log(forecastURL);
-
-        fetch(forecastURL, {
-            headers: {
-                'User-Agent': 'just testing this out (rwolsen@albany.edu)',
-                'Accept': 'application/geo+json'
-            }
-            })
-            .then(response => response.json())
-            .then(data => {
-
-                // Log the forecast to the console
-                //console.log(forecastPeriod1);
-                //console.log(forecastPeriod2);
-                //console.log(forecastPeriod3);
-                //console.log(forecastPeriod4);
-                
-                // Extract forecast information from the response
-                var forecastPeriod1 = data.properties.periods[0];
-                    var date1 = forecastPeriod1.name;
-                    var img1 = forecastPeriod1.icon;
-                    var wx1 = forecastPeriod1.shortForecast;
-                    var day1 = forecastPeriod1.isDaytime;
-                    if (day1 == true) {
-                        var temp1 = "High: " + forecastPeriod1.temperature + "°F";
-                    } else {
-                        var temp1 = "Low: " + forecastPeriod1.temperature + "°F";
-                    }
-                var forecastPeriod2 = data.properties.periods[1];
-                    var date2 = forecastPeriod2.name;
-                    var img2 = forecastPeriod2.icon;
-                    var wx2 = forecastPeriod2.shortForecast;
-                    var day2 = forecastPeriod2.isDaytime;
-                    if (day2 == true) {
-                        var temp2 = "High: " + forecastPeriod2.temperature + "°F";
-                    } else {
-                        var temp2 = "Low: " + forecastPeriod2.temperature + "°F";
-                    }
-                var forecastPeriod3 = data.properties.periods[2];
-                    var date3 = forecastPeriod3.name;
-                    var img3 = forecastPeriod3.icon;
-                    var wx3 = forecastPeriod3.shortForecast;
-                    var day3 = forecastPeriod3.isDaytime;
-                    if (day1 == true) {
-                        var temp3 = "High: " + forecastPeriod3.temperature + "°F";
-                    } else {
-                        var temp3 = "Low: " + forecastPeriod3.temperature + "°F";
-                    }
-                var forecastPeriod4 = data.properties.periods[3];
-                    var date4 = forecastPeriod4.name;
-                    var img4 = forecastPeriod4.icon;
-                    var wx4 = forecastPeriod4.shortForecast;
-                    var day4 = forecastPeriod4.isDaytime;
-                    if (day4 == true) {
-                        var temp4 = "High: " + forecastPeriod4.temperature + "°F";
-                    } else {
-                        var temp4 = "Low: " + forecastPeriod4.temperature + "°F";
-                    }
-
-                //get all that stuff on the webpage
-                document.getElementById("date1").innerHTML = date1;
-                document.getElementById("wx1").innerHTML = wx1;
-                document.getElementById("temp1").innerHTML = temp1;
-                document.getElementById("img1").src = img1;
-
-                document.getElementById("date2").innerHTML = date2;
-                document.getElementById("wx2").innerHTML = wx2;
-                document.getElementById("temp2").innerHTML = temp2;
-                document.getElementById("img2").src = img2;
-
-                document.getElementById("date3").innerHTML = date3;
-                document.getElementById("wx3").innerHTML = wx3;
-                document.getElementById("temp3").innerHTML = temp3;
-                document.getElementById("img3").src = img3;
-
-                document.getElementById("date4").innerHTML = date4;
-                document.getElementById("wx4").innerHTML = wx4;
-                document.getElementById("temp4").innerHTML = temp4;
-                document.getElementById("img4").src = img4;
-
-            })
-            .catch(error => {
-            console.error('Error fetching second JSON:', error);
-        }); 
+    .then(text => {
+      document.getElementById('text-product').innerText = text;
     })
     .catch(error => {
-    console.error('Error fetching first JSON:', error);
-}); 
-</script>
+      console.error('There was a problem with the fetch operation:', error);
+    });
+    </script>
+</div>
 <script>
-//Use NWS Api to get the current data, spent a lot less time on this one so its less painful
-const apiUrl2 = "https://api.weather.gov/stations/KALB/observations/latest"
-
-// Make first request to the NWS API 
-fetch(apiUrl2, {
-    headers: {
-        'User-Agent': 'just testing this out (rwolsen@albany.edu)', // Replace with your app's user agent
-        'Accept': 'application/geo+json'
-    }
-    })
-    .then(response => response.json())
-    .then(data => {
-        // Extract current information from the response
-        const newAPI = data.properties;
-        
-        console.log(newAPI);
-
-        var currentWx = newAPI.icon;
-        document.getElementById("wxImg").src = currentWx;
-
-        var wxText = newAPI.textDescription;
-        document.getElementById("wxText").innerHTML = wxText;
-        
-        var tmpC = newAPI.temperature.value;
-        if (tmpC != null) {
-            var tmpF = tmpC * (9/5) + 32
-            document.getElementById("tmpC").innerHTML = Math.round(tmpC) + "°C";
-            document.getElementById("tmpF").innerHTML = Math.round(tmpF) + "°F";
-        } else {
-            document.getElementById("tmpF").innerHTML = "N/A";
-        }
-        
-        var dewpC = newAPI.dewpoint.value;
-        if (dewpC != null) {
-            var dewpF = dewpC * (9/5) + 32
-            document.getElementById("dewpointC").innerHTML = Math.round(dewpC) + "°C";
-            document.getElementById("dewpointF").innerHTML = Math.round(dewpF) + "°F";
-        } else {
-            document.getElementById("dewpointF").innerHTML = "N/A";
-        }
-
-        var RH = newAPI.relativeHumidity.value;
-        if (RH != null) {
-            document.getElementById("RH").innerHTML = Math.round(RH) + "%";
-        } else {
-            document.getElementById("RH").innerHTML = "N/A"
-        }
-        
-        var slpPa = newAPI.seaLevelPressure.value;
-        if (slpPa != null) {
-            var slphPa = slpPa * .01
-            var slpHg = slpPa * .00029529983071445
-            document.getElementById("slphPa").innerHTML = slphPa.toFixed(1) + "hPa";
-        } else {
-            document.getElementById("slphPa").innerHTML = "N/A";
-        }
-
-        var presPa = newAPI.barometricPressure.value;
-        if (presPa != null) {
-            var presHg = presPa * .00029529983071445
-            document.getElementById("presHg").innerHTML = presHg.toFixed(2) + '"';
-        } else {
-            document.getElementById("presHg").innerHTML = "N/A"
-        }
-
-        var visM = newAPI.visibility.value;
-        if (visM != null) {
-            var vis = visM * .0006213712
-            document.getElementById("vis").innerHTML = vis.toFixed(2) + "mi";
-        } else {
-            document.getElementById("vis").innerHTML = "N/A"
-        }
-    })
-    .catch(error => {
-    console.error('Error fetching first JSON:', error);
-}); 
-</script>
-<script>
+//make the dropdown drop down
 const dropdownSelect = document.getElementById("nav-bar-dropdown");
 const dropdown = document.querySelectorAll(".dropdown-list");
 let timeout;
@@ -1591,6 +1406,466 @@ window.onscroll = function() {
     } else { 
         isntScrolled();
     }
+};
+</script>
+<script>
+// forecast sounding model select
+
+const namButton = document.getElementById('nam-button');
+const gfsButton = document.getElementById('gfs-button');
+
+var model = 'nam';
+
+namButton.addEventListener("click", nam);
+gfsButton.addEventListener("click", gfs);
+
+function nam() {
+    model = 'nam';
+    namButton.style.backgroundColor = '#ffc107';
+    namButton.style.color = '#46166B';
+    gfsButton.style.backgroundColor = '#46166B';
+    gfsButton.style.color = 'white';
+    forecastSounding.src = "https://www.atmos.albany.edu/products/" + model + "sndg/" + site + ".gif." + index;
+}
+
+function gfs() {
+    model = 'gfs';
+    namButton.style.backgroundColor = '#46166B';
+    namButton.style.color = 'white';
+    gfsButton.style.backgroundColor = '#ffc107';
+    gfsButton.style.color = '#46166B';
+    forecastSounding.src = "https://www.atmos.albany.edu/products/" + model + "sndg/" + site + ".gif." + index;
+}
+    
+// Play/Pause forecast sounding loop
+
+//change play/pause button when pressed
+const playButton = document.getElementById('play-button');
+var paused = true;
+
+playButton.addEventListener("click", playLoop);
+
+function playLoop() {
+    if (paused == true) {
+        playButton.innerText = '='
+        playButton.style.transform = 'rotate(90deg)';
+        playButton.style.fontSize = '40px';
+        playButton.style.paddingRight = '20px';
+        playButton.style.paddingTop = '8px';
+        paused = false;
+    } else {
+        playButton.innerText = '▶'
+        playButton.style.transform = '';
+        playButton.style.fontSize = '30px';
+        playButton.style.paddingRight = '';
+        playButton.style.paddingTop = '';
+        paused = true;
+    }
+    return paused;
+}
+
+const forecastSounding = document.getElementById('forecast-sounding');
+var index = 0;
+//loop animation
+function forecastSoundingLoop() {
+    if (paused == false) {
+        forecastSounding.src = "https://www.atmos.albany.edu/products/" + model + "sndg/" + site + ".gif." + index;
+        document.getElementById('counter').innerHTML = index + 1;
+        index = index + 1;
+    } else {
+        forecastSounding.src = "https://www.atmos.albany.edu/products/" + model + "sndg/" + site + ".gif." + index;
+        document.getElementById('counter').innerHTML = index + 1;
+    }
+    if (model == 'nam') {
+        if (index > 84) {
+            index = 0;
+        } else {
+            index = index;
+        }
+    } else {
+        if (index > 140) {
+            index = 0;
+        } else {
+            index = index;
+        }
+    }
+};
+
+//step forward 1 image when back button pressed
+const stepForward = document.getElementById('step-forward');
+
+stepForward.addEventListener("click", stepForwardForecastSounding);
+
+function stepForwardForecastSounding() {
+    if (model == 'nam') {
+        if (index == 84) {
+            index = 0;
+        } else {
+            index = index + 1;
+        }
+    } else {
+        if (index == 140) {
+            index = 0;
+        } else {
+            index = index + 1;
+        }
+    }
+    forecastSounding.src = "https://www.atmos.albany.edu/products/" + model + "sndg/" + site + ".gif." + index;
+    document.getElementById('counter').innerHTML = index + 1;
+}
+
+const stepBackward = document.getElementById('step-backward');
+
+//step back 1 image when back button pressed
+stepBackward.addEventListener("click", stepBackwardForecastSounding);
+
+function stepBackwardForecastSounding() {
+    if (model == 'nam') {
+        if (index == 0) {
+            index = 84;
+        } else {
+            index = index - 1;
+        }
+    } else {
+        if (index == 0) {
+            index = 140;
+        } else {
+            index = index - 1;
+        }
+    }
+    forecastSounding.src = "https://www.atmos.albany.edu/products/" + model + "sndg/" + site + ".gif." + index;
+    document.getElementById('counter').innerHTML = index + 1;
+}
+
+const speedUpButton = document.getElementById("speed-up");
+    
+var interval = 200;
+var loopSpeed = '2 fps';
+var forecastSoundingAnimation = setInterval(forecastSoundingLoop, interval);
+
+speedUpButton.addEventListener("click", speedUpLoop)
+    
+function speedUpLoop() {
+    clearInterval(forecastSoundingAnimation);
+    if (interval == 1000) {
+        interval = 500;
+    } else if (interval == 500) {
+        interval = 333;
+    } else if (interval == 333) {
+        interval = 250;
+    } else if (interval == 250) {
+        interval = 200;
+    } else if (interval == 200) {
+        interval = 167;
+    } else if (interval == 167) {
+        interval = 143;
+    } else if (interval == 143) {
+        interval = 125;
+    } else if (interval == 125) {
+        interval = 111;
+    } else if (interval == 111) {
+        interval = 100;
+    } else {
+        interval = interval;
+    }
+    forecastSoundingAnimation = setInterval(forecastSoundingLoop, interval);
+    loopSpeed = Math.round(1000 / interval) + ' fps';
+    document.getElementById('interval-counter').innerHTML = loopSpeed;
+}
+
+const slowDownButton = document.getElementById("slow-down");
+
+slowDownButton.addEventListener("click", slowDownLoop)
+
+function slowDownLoop() {
+    clearInterval(forecastSoundingAnimation);
+    if (interval == 100) {
+        interval = 111;
+    } else if (interval == 111) {
+        interval = 125;
+    } else if (interval == 125) {
+        interval = 143;
+    } else if (interval == 143) {
+        interval = 167;
+    } else if (interval == 167) {
+        interval = 200;
+    } else if (interval == 200) {
+        interval = 250;
+    } else if (interval == 250) {
+        interval = 333;
+    } else if (interval == 333) {
+        interval = 500;
+    } else if (interval == 500) {
+        interval = 1000;
+    } else {
+        interval = interval;
+    }
+    forecastSoundingAnimation = setInterval(forecastSoundingLoop, interval);
+    loopSpeed = Math.round(1000 / interval) + ' fps';
+    document.getElementById('interval-counter').innerHTML = loopSpeed;
+}
+</script>
+<script>
+// forecast sfc map select
+
+const usButton = document.getElementById('us-button');
+const nyButton = document.getElementById('ny-button');
+
+var map = 'us';
+
+usButton.addEventListener("click", us);
+nyButton.addEventListener("click", ny);
+
+function us() {
+    map = 'us';
+    usButton.style.backgroundColor = '#ffc107';
+    usButton.style.color = '#46166B';
+    nyButton.style.backgroundColor = '#46166B';
+    nyButton.style.color = 'white';
+    sfcMap.src = "https://www.atmos.albany.edu/products/thetaq_gif/" + map + "." + sfcVar + ".gif." + index2;
+}
+
+function ny() {
+    map = 'ny';
+    usButton.style.backgroundColor = '#46166B';
+    usButton.style.color = 'white';
+    nyButton.style.backgroundColor = '#ffc107';
+    nyButton.style.color = '#46166B';
+    sfcMap.src = "https://www.atmos.albany.edu/products/thetaq_gif/" + map + "." + sfcVar + ".gif." + index2;
+}
+
+const thetaButton = document.getElementById('theta-button');
+const mixrButton = document.getElementById('mixr-button');
+
+var sfcVar = 'theta';
+
+thetaButton.addEventListener("click", theta);
+mixrButton.addEventListener("click", mixr);
+
+function theta() {
+    sfcVar = 'theta';
+    thetaButton.style.backgroundColor = '#ffc107';
+    thetaButton.style.color = '#46166B';
+    mixrButton.style.backgroundColor = '#46166B';
+    mixrButton.style.color = 'white';
+    sfcMap.src = "https://www.atmos.albany.edu/products/thetaq_gif/" + map + "." + sfcVar + ".gif." + index2;
+};
+
+function mixr() {
+    sfcVar = 'mixr';
+    thetaButton.style.backgroundColor = '#46166B';
+    thetaButton.style.color = 'white';
+    mixrButton.style.backgroundColor = '#ffc107';
+    mixrButton.style.color = '#46166B';
+    sfcMap.src = "https://www.atmos.albany.edu/products/thetaq_gif/" + map + "." + sfcVar + ".gif." + index2;
+};
+    
+// Play/Pause forecast sounding loop
+
+//change play/pause button when pressed
+const playButton2 = document.getElementById('play-button-2');
+var paused2 = true;
+
+playButton2.addEventListener("click", playLoop2);
+
+function playLoop2() {
+    if (paused2 == true) {
+        playButton2.innerText = '='
+        playButton2.style.transform = 'rotate(90deg)';
+        playButton2.style.fontSize = '40px';
+        playButton2.style.paddingRight = '20px';
+        playButton2.style.paddingTop = '8px';
+        paused2 = false;
+    } else {
+        playButton2.innerText = '▶'
+        playButton2.style.transform = '';
+        playButton2.style.fontSize = '30px';
+        playButton2.style.paddingRight = '';
+        playButton2.style.paddingTop = '';
+        paused2 = true;
+    }
+    return paused2;
+};
+
+const sfcMap = document.getElementById('sfc-map');
+var index2 = 0;
+//loop animation
+function sfcMapLoop() {
+    if (paused2 == false) {
+        sfcMap.src = "https://www.atmos.albany.edu/products/thetaq_gif/" + map + "." + sfcVar + ".gif." + index2;
+        document.getElementById('counter-2').innerHTML = index2 + 1;
+        index2 = index2 + 1;
+    } else {
+        sfcMap.src = "https://www.atmos.albany.edu/products/thetaq_gif/" + map + "." + sfcVar + ".gif." + index2;
+        document.getElementById('counter-2').innerHTML = index2 + 1;
+    }
+    
+    if (index2 > 48) {
+        index2 = 0;
+    } else {
+        index2 = index2;
+    } 
+};
+
+//step forward 1 image when forward button pressed
+const stepForward2 = document.getElementById('step-forward-2');
+
+stepForward2.addEventListener("click", stepForwardSfcMap);
+
+function stepForwardSfcMap() {
+    if (index2 > 48) {
+            index2 = 0;
+        } else {
+            index2 = index2 + 1;
+        }
+    sfcMap.src = "https://www.atmos.albany.edu/products/thetaq_gif/" + map + "." + sfcVar + ".gif." + index2;
+    document.getElementById('counter-2').innerHTML = index2 + 1;
+};
+
+const stepBackward2 = document.getElementById('step-backward-2');
+
+//step back 1 image when back button pressed
+stepBackward2.addEventListener("click", stepBackwardSfcMap);
+
+function stepBackwardSfcMap() {
+    if (index2 == 0) {
+        index2 = 48;
+    } else {
+        index2 = index2 - 1;
+    }
+
+    sfcMap.src = "https://www.atmos.albany.edu/products/thetaq_gif/" + map + "." + sfcVar + ".gif." + index2;
+    document.getElementById('counter-2').innerHTML = index2 + 1;
+}
+
+const speedUpButton2 = document.getElementById("speed-up-2");
+    
+var interval2 = 200;
+var loopSpeed2 = '2 fps';
+var sfcMapAnimation = setInterval(sfcMapLoop, interval2);
+
+speedUpButton2.addEventListener("click", speedUpLoop2)
+    
+function speedUpLoop2() {
+    clearInterval(sfcMapAnimation);
+    if (interval2 == 1000) {
+        interval2 = 500;
+    } else if (interval2 == 500) {
+        interval2 = 333;
+    } else if (interval2 == 333) {
+        interval2 = 250;
+    } else if (interval2 == 250) {
+        interval2 = 200;
+    } else if (interval2 == 200) {
+        interval2 = 167;
+    } else if (interval2 == 167) {
+        interval2 = 143;
+    } else if (interval2 == 143) {
+        interval2 = 125;
+    } else if (interval2 == 125) {
+        interval2 = 111;
+    } else if (interval2 == 111) {
+        interval2 = 100;
+    } else {
+        interval2 = interval2;
+    }
+    sfcMapAnimation = setInterval(sfcMapLoop, interval2);
+    loopSpeed2 = Math.round(1000 / interval2) + ' fps';
+    document.getElementById('interval-counter-2').innerHTML = loopSpeed2;
+}
+
+const slowDownButton2 = document.getElementById("slow-down-2");
+
+slowDownButton2.addEventListener("click", slowDownLoop2)
+
+function slowDownLoop2() {
+    clearInterval(sfcMapAnimation);
+    if (interval2 == 100) {
+        interval2 = 111;
+    } else if (interval2 == 111) {
+        interval2 = 125;
+    } else if (interval2 == 125) {
+        interval2 = 143;
+    } else if (interval2 == 143) {
+        interval2 = 167;
+    } else if (interval2 == 167) {
+        interval2 = 200;
+    } else if (interval2 == 200) {
+        interval2 = 250;
+    } else if (interval2 == 250) {
+        interval2 = 333;
+    } else if (interval2 == 333) {
+        interval2 = 500;
+    } else if (interval2 == 500) {
+        interval2 = 1000;
+    } else {
+        interval2 = interval2;
+    }
+    sfcMapAnimation = setInterval(sfcMapLoop, interval2);
+    loopSpeed2 = Math.round(1000 / interval2) + ' fps';
+    document.getElementById('interval-counter-2').innerHTML = loopSpeed2;
+}
+</script>
+<script>
+// buttons for the satellite/radar section
+const visButton = document.getElementById("vis-button");
+const irButton = document.getElementById("ir-button");
+const satelliteImg = document.getElementById("satellite-img");
+const satelliteLink = document.getElementById("satellite-link");
+const satelliteText = document.getElementById("satellite-text");
+
+visButton.addEventListener("click", toVisSatellite);
+
+function toVisSatellite() {
+    visButton.style.backgroundColor = '#ffc107';
+    visButton.style.color = '#46166B';
+    irButton.style.backgroundColor = '#46166B';
+    irButton.style.color = 'white';
+    satelliteImg.src = "https://www.atmos.albany.edu/weather/satellite/ne/00latestvis-nd.gif";
+    satelliteLink.href = "https://www.atmos.albany.edu/weather/satellite/ne/00latestvis-nd.gif";
+    satelliteText.innerHTML = "Latest Visible Satellite Image";
+};
+
+irButton.addEventListener("click", toIrSatellite);
+
+function toIrSatellite() {
+    irButton.style.backgroundColor = '#ffc107';
+    irButton.style.color = '#46166B';
+    visButton.style.backgroundColor = '#46166B';
+    visButton.style.color = 'white';
+    satelliteImg.src = "https://www.atmos.albany.edu/weather/satellite/ne/00latestir-nd.gif";
+    satelliteLink.href = "https://www.atmos.albany.edu/weather/satellite/ne/00latestir-nd.gif";
+    satelliteText.innerHTML = "Latest Infared Satellite Image";
+};
+
+const kenxLoopButton = document.getElementById("kenx-loop-button");
+const kenxImgButton = document.getElementById("kenx-img-button");
+const radarImg = document.getElementById("radar-img");
+const radarLink = document.getElementById("radar-link");
+const radarText = document.getElementById("radar-text");
+
+kenxLoopButton.addEventListener("click", kenxLoop);
+
+function kenxLoop() {
+    kenxLoopButton.style.backgroundColor = '#ffc107';
+    kenxLoopButton.style.color = '#46166B';
+    kenxImgButton.style.backgroundColor = '#46166B';
+    kenxImgButton.style.color = 'white';
+    radarImg.src = "https://www.atmos.albany.edu/weather/radar/base/ENX/animate.gif";
+    radarLink.href = "https://www.atmos.albany.edu/weather/radar/base/ENX/animate.gif";
+    radarText.innerHTML = "Latest KENX Reflectivity Loop";
+};
+
+kenxImgButton.addEventListener("click", kenxImg);
+
+function kenxImg() {
+    kenxImgButton.style.backgroundColor = '#ffc107';
+    kenxImgButton.style.color = '#46166B';
+    kenxLoopButton.style.backgroundColor = '#46166B';
+    kenxLoopButton.style.color = 'white';
+    radarImg.src = "https://www.atmos.albany.edu/weather/radar/base/ENX/latest.gif";
+    radarLink.href = "https://www.atmos.albany.edu/weather/radar/base/ENX/latest.gif";
+    radarText.innerHTML = "Latest KENX Reflectivity Image";
 };
 </script>
 </body>

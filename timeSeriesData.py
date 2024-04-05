@@ -302,12 +302,6 @@ wdsp = data.variables['SKNT']
 #pres = data.variables['ALTI']
 
 
-# In[32]:
-
-
-tmpc[20]
-
-
 # In[33]:
 
 
@@ -385,20 +379,6 @@ df3 = df3.reset_index()
 
 
 df3['Time'] = pd.to_datetime(df3[timeDim])
-
-fullTimes = df3['Time']
-newTimes = []
-for timestep in fullTimes:
-    if timestep.minute > 29:
-        newtime = timestep.replace(hour = timestep.hour + 1, minute = 00)
-        newTimes.append(newtime)
-    else:
-        newtime = timestep
-        newTimes.append(newtime)df4 = pd.DataFrame(
-    { 'Time' : newTimes}
-)df3['Time'] = df4['Time'].values
-# In[42]:
-
 
 df3['T'] = (df3['T'] - 273.15) * (9/5) + 32
 df3['Td'] = (df3['Td'] - 273.15) * (9/5) + 32

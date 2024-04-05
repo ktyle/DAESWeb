@@ -1,0 +1,120 @@
+﻿station,name,lat,lon
+ABQ,Albuquerque,35.0376,-106.6221
+ABR,Aberdeen,45.45,-98.43
+ALB,Albany,42.6805,-73.8026
+AMA,Amarillo,35.2331,-101.7091
+APX,Gaylord,44.9074,-84.7189
+BIS,Bismark,46.772,-100.7596
+BMX,Birmingham,33.1791,-86.7822
+BNA,Nashville,36.2472,-86.5631
+BOI,Boise,43.5673,-116.2114
+BRO,Brownsville,25.91,-97.42
+BUF,Buffalo,42.9414,-78.7193
+CAR,Caribou,46.8684,-68.0135
+CHS,Charleston,32.8952,80.0275
+CRP,Corpus Christi,27.7787,-97.5057
+DDC,Dodge City,37.7604,-99.9689
+DTX,Detriot,42.6979,-83.4718
+DVN,Davenport,41.6116,-90.5803
+EPZ,El Paso,31.8728,-106.6982
+FFC,Peachtree City,33.3601,-84.567
+FGZ,Flagstaff,35.23,-111.8217
+FWD,Fort Worth,32.8347,-97.2987
+GGW,Glasgow,48.2067,-106.6259
+GJT,Grand Junction,39.12,-108.5251
+GRB,Green Bay,44.4987,-88.1118
+GSO,Greensboro,36.098,-79.9431
+GYX,Gray,43.8927,-70.2544
+IAD,Dulles,38.9523,-77.4586
+ILN,Wilmington,34.2763,-77.9129
+ILX,Lincoln,40.1518,-89.3384
+INL,International Falls,48.5664,-93.3976
+JAN,Jackson,32.32,90.08
+JAX,Jacksonville,30.484,-81.7017
+KEY,Key West,24.5533,-81.7886
+LBF,North Platte,41.1334,-100.6999
+LCH,Lake Charles,30.1252,-93.2163
+LIX,New Orleans,30.3369,-89.8244
+LKN,Elko,40.8599,-115.7423
+LMN,Lamont,36.62,-97.48
+LZK,Little Rock,34.8347,-92.2596
+MAF,Midland,31.9425,-102.1891
+MDSD,Santo Domingo,18.43,-69.88
+MFL,Miami,25.8248,-80.3193
+MFR,Medford,42.3769,-122.8823
+MHX,Newport,34.7763,-76.8767
+MKJP,Norman Manley,17.93,-76.78
+MMMD,Merida,20.98,-89.65
+MPCZ,,,
+MPX,Twin Cities,44.8488,-93.5655
+MWCR,Owen Roberts,19.28,-81.35
+MZBZ,Belize,17.53,-88.3
+NKX,Miramar,32.87,-117.13
+OAK,Oakland,37.73,-122.22
+OAX,Omaha,41.32,-96.37
+OKX,Upton,40.87,-72.87
+OTX,Spokane,47.6807,-117.6264
+OUN,Norman  ,35.22,-97.45
+PABE,Bethel,60.78,-161.8
+PABR,Barrow,71.3,-156.78
+PACD,Cold Bay,55.2,-162.73
+PADQ,Kodiak,57.75,-152.5
+PAFA,Fairbanks,64.82,-147.87
+PAKN,King Salmon,58.68,-156.65
+PAMC,Mcgrath,62.97,-155.62
+PANC,Anchorage,61.17,-150.02
+PANT,Annette Island,55.03,-131.57
+PAOM,Nome,64.52,-165.45
+PASN,Saint Paul Island,57.15,-170.22
+PASY,Shmya,52.72,174.12
+PAYA,Yakutat,59.52,-139.67
+PIT,Pittsburgh,40.5,-80.22
+RAP,Rapid City,44.08,-103.05
+REV,Reno,39.57,-119.78
+RIW,Riverton,43.07,-108.48
+RNK,Blacksburg,37.2,-80.42
+SGF,Springfield,37.23,-93.38
+SHV,Shreveport,32.47,-93.82
+SLC,Salt Lake City,40.78,-111.97
+SLE,Salem,44.92,-123
+TBPB,Grantley Adams,13.07,-59.48
+TBW,Tampa Bay,27.7,-82.4
+TFX,Great Falls,47.47,-111.38
+TJSJ,Luiz Munoz Marin,18.4378,-66.0042
+TLH,Tallahassee,30.4,-84.35
+TNCC,Hato,12.2,-68.97
+TNCM,Prinses Juliana,18.05,-63.12
+TOP,Topeka,39.07,-95.62
+TTPP,Piarco,10.62,-61.35
+TUS,Tucson,32.23,-110.93
+TXKF,Bermuda,32.37,-64.68
+UIL,Quilayute,47.95,-124.55
+VBG,Vandenburg,34.65,-120.57
+VEF,Las Vegas,38.05,-115.19
+WAL,Wallops Island,37.93,-75.48
+WEU,Eureka,79.98,-85.93
+WLT,Alert,82.5,-62.33
+WMW,Maniwaki,46.38,-75.97
+WPH,Inukjuak,58.45,-78.12
+WPL,Pickle Lake,51.47,-90.2
+WSE,Edmonton,53.55,-114.1
+XMR,Cape Kennedy,28.47,-80.55
+YAH,Lagrande,53.75,-73.67
+YBK,Baker Lake,64.3,-96.08
+YCB,Cambridge Bay,69.1,-105.12
+YEV,Inuvik,68.3,-133.48
+YJT,Stephenville,48.53,-58.55
+YQD,The Pas,53.97,-101.68
+YQI,Yarmouth,43.83,-66.08
+YRB,Resolute,74.72,-94.98
+YSM,Fort Smith,60.02,-111.95
+YUX,Hall Beach ,68.78,-81.25
+YVP,Kuujjuaq,58.1,-68.42
+YVQ,Norman Wells,65.28,-126.8
+YXY,Whitehorse,60.72,-135.07
+YYE,Fort Nelson,58.83,-122.58
+YYQ,Churchill,58.75,-94.07
+YYR,Goose Bay,53.32,-60.42
+YZT,Port Hardy,50.68,-127.37
+YZV,Sept Isles,50.22,-66.27
+ZXS,Prince George,53.884,-122.6743
