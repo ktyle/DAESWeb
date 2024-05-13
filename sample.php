@@ -13,6 +13,8 @@
         crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.css' rel='stylesheet' />
     <style>
     body {
         font-family: Public Sans, sans-serif;
@@ -517,6 +519,30 @@
         border: 2px solid #46166B;
         cursor: pointer;
     }
+
+    .content-body {
+        width: 100%;
+        height: 85vh;
+        min-height: 700px;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+        
+    .grid-item {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .footer-text {
+        color: #666; 
+        text-align: left; 
+        padding-left: 53px; 
+        font-size: 1.5em; 
+        margin: 6px;
+    }
     
     @media (min-width: 1500px) {
     
@@ -708,6 +734,16 @@
                     <a href="https://www.atmos.albany.edu/student/mbarletta/4Panel/4Panel.php" class="dropdown-link">
                         <li class="dropdown-item">
                             <p class="dropdown-text">Michael Barletta's WxEdge</p>
+                        </li>
+                    </a>
+                    <a href="https://www.atmos.albany.edu/facstaff/tang/tcguidance/index.html" class="dropdown-link">
+                        <li class="dropdown-item">
+                            <p class="dropdown-text">Brian Tang's TC Guidance</p>
+                        </li>
+                    </a>
+                    <a href="https://www.atmos.albany.edu/student/heathera/" class="dropdown-link">
+                        <li class="dropdown-item">
+                            <p class="dropdown-text">Heather Archembault’s GFS Archive</p>
                         </li>
                     </a>
                 </ul>
@@ -978,6 +1014,7 @@ var temps = [];
 var dewps = [];
 var wdsps = [];
 var wdchs = [];
+var htidx = [];
 
 for(let i = 0; i < length; i++) {
     let time = data[i].Time;
@@ -995,11 +1032,14 @@ for(let i = 0; i < length; i++) {
 
     let wdch = data[i].WindChill;
     wdchs.push(wdch);
+
+    let hidx = data[i].HeatIndex;
+    htidx.push(hidx);
 }
-console.log(temps);
-console.log(times);
-console.log(wdsps);
-console.log(wdchs);
+//console.log(temps);
+//console.log(times);
+//console.log(wdsps);
+//console.log(wdchs);
 
 var chartDom = document.getElementById('main');
 var myChart = echarts.init(chartDom);
@@ -1013,7 +1053,7 @@ option = {
     trigger: 'axis'
   },
   legend: {
-    data: ['Temperature', 'Dewpoint', 'Wind Chill']
+    data: ['Temperature', 'Dewpoint', 'Wind Chill', 'Heat Index']
   },
   grid: {
     left: '3%',
@@ -1057,6 +1097,13 @@ option = {
       data: wdchs,
       type: 'line',
       color: 'blue'
+    },
+
+    {
+      name: 'Heat Index',
+      data: htidx,
+      type: 'line',
+      color: 'orange'
     }
   ]
 };
@@ -1083,6 +1130,18 @@ option && myChart.setOption(option);
     </li>
 </ul>
 <div class="padding"></div>
+<div style="width: 100%; height: auto; text-align: center; padding-bottom: 16px;">
+    <a class="real-time-product-title" 
+    href="https://www.atmos.albany.edu/student/mbarletta/4Panel/4Panel.php">Michael Barletta&#8217;s WxEdge</a> 
+</div>
+<div style="width: 100%; height: auto; text-align: center; padding-bottom: 16px;">
+    <a class="real-time-product-title" 
+    href="https://www.atmos.albany.edu/facstaff/tang/tcguidance/index.html">Brain Tang&#8217;s TC Guidance</a> 
+</div>
+<div style="width: 100%; height: auto; text-align: center; padding-bottom: 16px;">
+    <a class="real-time-product-title" 
+    href="https://www.atmos.albany.edu/student/heathera/">Heather Archembault&#8217;s GFS Archive</a> 
+</div>
 <div class="padding"></div>
 <ul class="legacy-background">
     <li class="legacy-products">
@@ -1095,7 +1154,47 @@ option && myChart.setOption(option);
         </a>
     </li>
 </ul>
-<div class="padding">
+<div class="padding" style="height: 60px;"></div>
+<div class="content-body" id="footer">
+    <div class="grid-container">
+        <div class="grid-item">
+            <div id='map3' style='width: 90%; height: 450px; margin-left: 75px; margin-top: 75px;'></div>
+            <script>
+            mapboxgl.accessToken = 'pk.eyJ1IjoicndvbHNlbiIsImEiOiJjbHV1MzhvYWgwNW5kMmltcGE5anpyY2FkIn0.1Es65i7Dtwnl8klxS1aQpA';
+            const map3 = new mapboxgl.Map({
+            	container: 'map3', // container ID
+            	style: 'mapbox://styles/rwolsen/clv6wy0js002e01pe5eifd7yq', // style URL
+            	center: [-73.81599, 42.68047], // starting position [lng, lat]
+            	zoom: 15, // starting zoom
+            });
+            </script>
+        </div>
+        <div class="grid-item">
+            <h1 class="section-title" style="color: #666; text-align: left; margin-top: 75px; font-size: 2.75em;">Department of Atmospheric and Environmental Sciences, College of Arts and Sciences</h1>
+            <p class="footer-text">ETEC 496</p>
+            <p class="footer-text">1220 Washington Avenue</p>
+            <p class="footer-text">Albany, NY 12222</p>
+            <p class="footer-text">United States</p>
+            <br>
+            <p class="footer-text"><b>Email:</b> daeschair@albany.edu</p>
+            <p class="footer-text"><b>Phone:</b> 518-442-4556</p>
+            <p class="footer-text"><b>Fax:</b> 518-442-4556</p>
+            <br>
+            <p class="footer-text" style="font-family: ualbFont;">Office Hours</p>
+            <p class="footer-text">On Site: Weekdays, 8am-4pm</p>
+        </div>
+    </div>
+    <div class="padding" style="height: 80px;"></div>
+    <div style="height: auto;">
+        <img src="images/campus-center.jpg" style="width: 100%; position: absolute;">
+        <a href="https://www.albany.edu/">
+            <img src="images/UAlbanyMark.png" style="width: 30%; position: relative; margin-top: 7%; left: 35%;">
+        </a>
+        <div style="width: 100%; background-color: #eee; display: block;">
+            <p style="color: white;">1400 Washington Avenue, Albany, NY 12222 | Phone: 518-442-3300</p>
+        </div>
+    </div>
+</div>
 <script>
 //current conditions image gallery
 const contentTriplets = [

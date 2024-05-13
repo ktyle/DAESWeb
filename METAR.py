@@ -521,6 +521,8 @@ wdsp
 
 
 u, v = mpcalc.wind_components(wdsp, wdir_d)
+u = (np.nan_to_num(u,True).astype(int))
+v = (np.nan_to_num(v,True).astype(int))
 
 
 # In[19]:
@@ -627,6 +629,8 @@ def wdir_to_wdir_str(wind_dir): #get wdir str from wdr
         wind_dir_str = 'NW'
     elif wind_dir > 337.5 or wind_dir < 22.5:
         wind_dir_str = 'N'
+    else:
+        wind_dir_str = 'VRB'
         
     return wind_dir_str
 

@@ -1,16 +1,16 @@
-Today
-High: 52.1°F
-Mostly Clear
-Chance of Precipitation: 10%
 Tonight
-Low: 27.9°F
+Low: 43.1°F
 Partly Cloudy
-Chance of Precipitation: 0%
+Chance of Precipitation: 10%
+Monday
+High: 70.1°F
+Slight Chance of Light Rain Showers then Chance of Light Rain Showers
+Chance of Precipitation: 40%
+Monday Night
+Low: 54.0°F
+Chance of Light Rain Showers then Mostly Cloudy
+Chance of Precipitation: 40%
 Tuesday
-High: 58.0°F
-Mostly Cloudy then Slight Chance of Light Rain Showers
-Chance of Precipitation: 30%
-Tuesday Night
-Low: 47.0°F
-Likely Light Rain Showers then Definite Light Rain Showers
-Chance of Precipitation: 80%
+High: 76.0°F
+Slight Chance of Light Rain Showers then Chance of Light Rain Showers and Slight Chance of Thunderstorms
+Chance of Precipitation: 50%

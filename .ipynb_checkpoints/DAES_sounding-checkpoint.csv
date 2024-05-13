@@ -11,7 +11,7 @@ BOI,Boise,43.5673,-116.2114
 BRO,Brownsville,25.91,-97.42
 BUF,Buffalo,42.9414,-78.7193
 CAR,Caribou,46.8684,-68.0135
-CHS,Charleston,32.8952,-80.0275
+CHS,Charleston,32.8952,80.0275
 CRP,Corpus Christi,27.7787,-97.5057
 DDC,Dodge City,37.7604,-99.9689
 DTX,Detriot,42.6979,-83.4718
@@ -29,7 +29,7 @@ IAD,Dulles,38.9523,-77.4586
 ILN,Wilmington,34.2763,-77.9129
 ILX,Lincoln,40.1518,-89.3384
 INL,International Falls,48.5664,-93.3976
-JAN,Jackson,32.32,-90.08
+JAN,Jackson,32.32,90.08
 JAX,Jacksonville,30.484,-81.7017
 KEY,Key West,24.5533,-81.7886
 LBF,North Platte,41.1334,-100.6999
@@ -45,6 +45,7 @@ MFR,Medford,42.3769,-122.8823
 MHX,Newport,34.7763,-76.8767
 MKJP,Norman Manley,17.93,-76.78
 MMMD,Merida,20.98,-89.65
+MPCZ,,,
 MPX,Twin Cities,44.8488,-93.5655
 MWCR,Owen Roberts,19.28,-81.35
 MZBZ,Belize,17.53,-88.3

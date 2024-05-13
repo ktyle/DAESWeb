@@ -15,6 +15,7 @@ import cartopy.crs as ccrs
 import cartopy.feature as cfeature
 import metpy
 from metpy.units import units
+import metpy.calc as mpcalc
 from pyproj import Proj
 import pytz
 from pytz import timezone
@@ -302,14 +303,14 @@ wdsp = data.variables['SKNT']
 #pres = data.variables['ALTI']
 
 
-# In[33]:
+# In[32]:
 
 
 length = len(time)
 hours = np.arange(0, length, 1)
 
 
-# In[34]:
+# In[33]:
 
 
 tmpcs = []
@@ -323,7 +324,7 @@ for x in hours:
     i = i + 1
 
 
-# In[35]:
+# In[34]:
 
 
 tmpCs = tmpcs * units('degC') #attch units where necessary
@@ -336,7 +337,7 @@ wdsKt = wdsps * units('kt')
 wdmph = wdsKt.to('mph').magnitude
 
 
-# In[36]:
+# In[35]:
 
 
 df2 = pd.DataFrame(
@@ -347,19 +348,19 @@ df2 = pd.DataFrame(
 )
 
 
-# In[37]:
+# In[36]:
 
 
 df2 = df2.set_index(df2.columns[0])
 
 
-# In[38]:
+# In[37]:
 
 
 df2
 
 
-# In[39]:
+# In[38]:
 
 
 df3 = pd.concat([df2, df])
@@ -369,26 +370,52 @@ df3 = df3.rename(columns={timeDim: 'Time',
                           "Wind_speed_height_above_ground": "Wind"})
 
 
-# In[40]:
+# In[39]:
 
 
 df3 = df3.reset_index()
 
 
-# In[41]:
+# In[40]:
 
 
 df3['Time'] = pd.to_datetime(df3[timeDim])
+
+fullTimes = df3['Time']
+newTimes = []
+for timestep in fullTimes:
+    if timestep.minute > 29:
+        newtime = timestep.replace(hour = timestep.hour + 1, minute = 00)
+        newTimes.append(newtime)
+    else:
+        newtime = timestep
+        newTimes.append(newtime)df4 = pd.DataFrame(
+    { 'Time' : newTimes}
+)df3['Time'] = df4['Time'].values
+# In[41]:
+
 
 df3['T'] = (df3['T'] - 273.15) * (9/5) + 32
 df3['Td'] = (df3['Td'] - 273.15) * (9/5) + 32
 
 
-# In[43]:
+# In[42]:
 
 
 tempsF = df3['T']
+dewpsF = df3['Td']
 windsMph = df3['Wind']
+
+
+# In[43]:
+
+
+rh = []
+i = 0
+for temp in tempsF:
+    relH = 100 * mpcalc.relative_humidity_from_dewpoint(tempsF[i] * units.degF, dewpsF[i] * units.degF).magnitude
+    rh.append(relH)
+    i = i + 1
 
 
 # In[44]:
@@ -408,43 +435,94 @@ for wind in windsMph:
 # In[45]:
 
 
-df4 = pd.DataFrame(
-    {'WindChill' : windChills}   
-)
+heatIndex = []
+i = 0
+for temp in tempsF:
+    if tempsF[i] >= 80:
+        hi = -42.379 + 2.04901523*temp + 10.14333127*rh[i] - .22475541*temp*rh[i] - .00683783*temp*temp - .05481717*rh[i]*rh[i] + .00122874*temp*temp*rh[i] + .00085282*temp*rh[i]*rh[i] - .00000199*temp*temp*rh[i]*rh[i]
+        if rh[i] < 13:
+            adj = (13 - rh[i])/4 * np.sqrt(17 - abs(temp - 95)/17)
+            hi = hi - adj
+        elif rh[i] > 85 and temp < 87:
+            (rh[i] - 85)/10 * (87 - temp)/5
+        heatIndex.append(hi)
+    else:
+        heatIndex.append(float('NaN'))
+    i = i + 1
 
 
 # In[46]:
+
+
+df4 = pd.DataFrame(
+    {'WindChill' : windChills}
+)
+
+
+# In[47]:
 
 
 df5 = pd.concat([df3, df4], axis=1)
 df5
 
 
-# In[47]:
-
-
-df5['T'] = round(df5['T'])
-df5['Td'] = round(df5['Td'])
-df5['Wind'] = round(df5['Wind'])
-df5['WindChill'] = round(df5['WindChill'])
-
-
 # In[48]:
 
 
-df5
+df6 = pd.DataFrame(
+    {'RH' : rh}
+)
 
 
 # In[49]:
 
 
-df5 = df5.drop(columns=timeDim)
+df7 = pd.concat([df5, df6], axis=1)
+df7
 
 
 # In[50]:
 
 
-df5.to_csv('ALB_obs_fore.csv')
+df8 = pd.DataFrame(
+    {'HeatIndex' : heatIndex}
+)
+
+
+# In[51]:
+
+
+df9 = pd.concat([df7, df8], axis=1)
+df9
+
+
+# In[52]:
+
+
+df9['T'] = round(df9['T'])
+df9['Td'] = round(df9['Td'])
+df9['Wind'] = round(df9['Wind'])
+df9['WindChill'] = round(df9['WindChill'])
+df9['RH'] = round(df9['RH'])
+df9['HeatIndex'] = round(df9['HeatIndex'])
+
+
+# In[53]:
+
+
+df9 = df9.drop(columns=timeDim)
+
+
+# In[54]:
+
+
+df9
+
+
+# In[55]:
+
+
+df9.to_csv('ALB_obs_fore.csv')
 
 
 # In[ ]:

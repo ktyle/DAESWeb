@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UAlbany Weather Data and Forecasts</title>
+    <title>UAlbany DAES Weather Data and Forecasts</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;300&display=swap" rel="stylesheet">
@@ -13,6 +13,8 @@
         crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.css' rel='stylesheet' />
     <style>
     body {
         font-family: Public Sans, sans-serif;
@@ -160,15 +162,13 @@
     }
     
     .header-img-container {
-        margin: 2em 2em;
-        overflow: hidden;
+        margin: 0;
         position: relative;
     }
     
     .header-img {
         height: auto;
-        width: auto;
-        max-width: none;
+        width: 100%;
     }
     
     .header-text-container {
@@ -519,6 +519,30 @@
         border: 2px solid #46166B;
         cursor: pointer;
     }
+
+    .content-body {
+        width: 100%;
+        height: 85vh;
+        min-height: 700px;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+        
+    .grid-item {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .footer-text {
+        color: #666; 
+        text-align: left; 
+        padding-left: 53px; 
+        font-size: 1.5em; 
+        margin: 6px;
+    }
     
     @media (min-width: 1500px) {
     
@@ -712,6 +736,16 @@
                             <p class="dropdown-text">Michael Barletta's WxEdge</p>
                         </li>
                     </a>
+                    <a href="https://www.atmos.albany.edu/facstaff/tang/tcguidance/index.html" class="dropdown-link">
+                        <li class="dropdown-item">
+                            <p class="dropdown-text">Brian Tang's TC Guidance</p>
+                        </li>
+                    </a>
+                    <a href="https://www.atmos.albany.edu/student/heathera/" class="dropdown-link">
+                        <li class="dropdown-item">
+                            <p class="dropdown-text">Heather Archembault’s GFS Archive</p>
+                        </li>
+                    </a>
                 </ul>
             </li>
             <li id="dropdownSelect3" class="nav-item">
@@ -844,7 +878,7 @@
 </div>
 <div class="header-container">
     <div class="header-img-container">
-        <img class="header-img" src="images/balloon_crop.jpg">
+        <img class="header-img" src="images/cropped_image.jpeg">
         <div class="header-text-container">
             <h1 class="header-title">Albany Weather Data and Forecasts</h1>
             <p class="header-body">
@@ -969,94 +1003,112 @@
 <div class="padding"></div>
 <div id="main" style="width: 96%; height: 400px; margin: auto;"></div>
 <script type="module">
-    import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
+import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
+
+const data = await d3.csv("ALB_obs_fore.csv");
+var length = data.length;
+console.log(data);
+
+var times = [];
+var temps = [];
+var dewps = [];
+var wdsps = [];
+var wdchs = [];
+var htidx = [];
+
+for(let i = 0; i < length; i++) {
+    let time = data[i].Time;
+    //time = time.substring(0, time.length -12);
+    times.push(time);
     
-    const data = await d3.csv("ALB_obs_fore.csv");
-    var length = data.length;
-    console.log(data);
+    let temp = data[i].T;
+    temps.push(temp);
     
-    var times = [];
-    var temps = [];
-    var dewps = [];
-    var wdsps = [];
-    var wdchs = [];
+    let dewp = data[i].Td;
+    dewps.push(dewp);
 
-    for(let i = 0; i < length; i++) {
-        let time = data[i].Time;
-        //time = time.substring(0, time.length -12);
-        times.push(time);
-        
-        let temp = data[i].T;
-        temps.push(temp);
-        
-        let dewp = data[i].Td;
-        dewps.push(dewp);
+    let wdsp = data[i].Wind;
+    wdsps.push(wdsp);
 
-        let wdsp = data[i].Wind;
-        wdsps.push(wdsp);
+    let wdch = data[i].WindChill;
+    wdchs.push(wdch);
 
-        let wdch = data[i].WindChill;
-        wdchs.push(wdch);
+    let hidx = data[i].HeatIndex;
+    htidx.push(hidx);
+}
+//console.log(temps);
+//console.log(times);
+//console.log(wdsps);
+//console.log(wdchs);
+
+var chartDom = document.getElementById('main');
+var myChart = echarts.init(chartDom);
+var option;
+
+option = {
+  title: {
+    text: 'ALB 24-hour Observations and 24-hour Hour Forecast'
+  },
+  tooltip: {
+    trigger: 'axis'
+  },
+  legend: {
+    data: ['Temperature', 'Dewpoint', 'Wind Chill', 'Heat Index']
+  },
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  toolbox: {
+    feature: {
+      saveAsImage: {}
     }
-    console.log(temps);
-    console.log(times);
-    console.log(wdsps);
-    console.log(wdchs);
-
-    var chartDom = document.getElementById('main');
-    var myChart = echarts.init(chartDom);
-    var option;
+  },
+  xAxis: {
+    type: 'category',
+    boundaryGap: false,
+    data: times,
+  },
+  yAxis: {
+    type: 'value',
+    axisLabel: {
+      formatter: '{value} °F'
+  }
+  },
+  series: [
+    {
+      name: 'Temperature',
+      data: temps,
+      type: 'line',
+      color: 'red'
+    },
     
-    option = {
-      title: {
-        text: 'ALB 24-hour Observations and 24-hour Hour Forecast'
-      },
-      tooltip: {
-        trigger: 'axis'
-      },
-      legend: {
-        data: ['Temperature', 'Dewpoint', 'Wind Chill']
-      },
-      grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
-        containLabel: true
-      },
-      toolbox: {
-        feature: {
-          saveAsImage: {}
-        }
-      },
-      xAxis: {
-        type: 'category',
-        data: times,
-      },
-      yAxis: {
-        type: 'value',
-      },
-      series: [
-        {
-          name: 'Temperature',
-          data: temps,
-          type: 'line'
-        },
-        
-        {
-          name: 'Dewpoint',
-          data: dewps,
-          type: 'line'
-        },
+    {
+      name: 'Dewpoint',
+      data: dewps,
+      type: 'line',
+      color: 'green'
+    },
 
-        {
-          name: 'Wind Chill',
-          data: wdchs,
-          type: 'line'
-        }
-      ]
-    };
-    
-    option && myChart.setOption(option);
+    {
+      name: 'Wind Chill',
+      data: wdchs,
+      type: 'line',
+      color: 'blue'
+    },
+
+    {
+      name: 'Heat Index',
+      data: htidx,
+      type: 'line',
+      color: 'orange'
+    }
+  ]
+};
+
+option && myChart.setOption(option);
 </script>
 <div class="padding"></div>
 <div style="width: 100%; height: auto; text-align: center; padding-bottom: 16px;">
@@ -1078,10 +1130,22 @@
     </li>
 </ul>
 <div class="padding"></div>
+<div style="width: 100%; height: auto; text-align: center; padding-bottom: 16px;">
+    <a class="real-time-product-title" 
+    href="https://www.atmos.albany.edu/student/mbarletta/4Panel/4Panel.php">Michael Barletta&#8217;s WxEdge</a> 
+</div>
+<div style="width: 100%; height: auto; text-align: center; padding-bottom: 16px;">
+    <a class="real-time-product-title" 
+    href="https://www.atmos.albany.edu/facstaff/tang/tcguidance/index.html">Brain Tang&#8217;s TC Guidance</a> 
+</div>
+<div style="width: 100%; height: auto; text-align: center; padding-bottom: 16px;">
+    <a class="real-time-product-title" 
+    href="https://www.atmos.albany.edu/student/heathera/">Heather Archembault&#8217;s GFS Archive</a> 
+</div>
 <div class="padding"></div>
 <ul class="legacy-background">
     <li class="legacy-products">
-        <a href="https://www.atmos.albany.edu/index.php?d=wx_data" target="_blank">
+        <a href="https://www.atmos.albany.edu/student/rolsen/legacy.html" target="_blank">
         <img id="darkImage" src="images/mos_crop.png" class="legacy-img">
         <img id="lightImage" src="images/mos_crop_r.png" class="legacy-img">
         <div id="legacyButton" class="legacy-products-text">
@@ -1090,100 +1154,140 @@
         </a>
     </li>
 </ul>
-<div class="padding">
+<div class="padding" style="height: 60px;"></div>
+<div class="content-body" id="footer">
+    <div class="grid-container">
+        <div class="grid-item">
+            <div id='map3' style='width: 90%; height: 450px; margin-left: 75px; margin-top: 75px;'></div>
+            <script>
+            mapboxgl.accessToken = 'pk.eyJ1IjoicndvbHNlbiIsImEiOiJjbHV1MzhvYWgwNW5kMmltcGE5anpyY2FkIn0.1Es65i7Dtwnl8klxS1aQpA';
+            const map3 = new mapboxgl.Map({
+            	container: 'map3', // container ID
+            	style: 'mapbox://styles/rwolsen/clv6wy0js002e01pe5eifd7yq', // style URL
+            	center: [-73.81599, 42.68047], // starting position [lng, lat]
+            	zoom: 15, // starting zoom
+            });
+            </script>
+        </div>
+        <div class="grid-item">
+            <h1 class="section-title" style="color: #666; text-align: left; margin-top: 75px; font-size: 2.75em;">Department of Atmospheric and Environmental Sciences, College of Arts and Sciences</h1>
+            <p class="footer-text">ETEC 496</p>
+            <p class="footer-text">1220 Washington Avenue</p>
+            <p class="footer-text">Albany, NY 12222</p>
+            <p class="footer-text">United States</p>
+            <br>
+            <p class="footer-text"><b>Email:</b> daeschair@albany.edu</p>
+            <p class="footer-text"><b>Phone:</b> 518-442-4556</p>
+            <p class="footer-text"><b>Fax:</b> 518-442-4556</p>
+            <br>
+            <p class="footer-text" style="font-family: ualbFont;">Office Hours</p>
+            <p class="footer-text">On Site: Weekdays, 8am-4pm</p>
+        </div>
+    </div>
+    <div class="padding" style="height: 80px;"></div>
+    <div style="height: auto;">
+        <img src="images/campus-center.jpg" style="width: 100%; position: absolute;">
+        <a href="https://www.albany.edu/">
+            <img src="images/UAlbanyMark.png" style="width: 30%; position: relative; margin-top: 7%; left: 35%;">
+        </a>
+        <div style="width: 100%; background-color: #eee; display: block;">
+            <p style="color: white;">1400 Washington Avenue, Albany, NY 12222 | Phone: 518-442-3300</p>
+        </div>
+    </div>
+</div>
 <script>
 //current conditions image gallery
-    const contentTriplets = [
-        {image: "images/now.jpg", link: "https://www.atmos.albany.edu/facstaff/ralazear/mohawk/mohawk_2d.html",
-         text: "Latest Mohawk Tower Image"},
-        {image: "images/latest.gif", link: "https://www.atmos.albany.edu/weather/radar/base/ENX/animate.html",
-         text: "Latest KENX Radar Image"},
-        {image: "images/00latestvis-nd.gif", link: "https://www.atmos.albany.edu/weather/satellite/ne/00latestvis-nd.gif",
-         text: "Latest Visible Satellite Image"},
-        {image: "images/stationmap.png", link: "http://www.nysmesonet.org", text: "Latest NYS Mesonet Observations"}
-    ]; //image, text and, link for gallery
+const contentTriplets = [
+    {image: "images/now.jpg", link: "https://www.atmos.albany.edu/facstaff/ralazear/mohawk/mohawk_2d.html",
+     text: "Latest Mohawk Tower Image"},
+    {image: "images/latest.gif", link: "https://www.atmos.albany.edu/weather/radar/base/ENX/animate.html",
+     text: "Latest KENX Radar Image"},
+    {image: "images/00latestvis-nd.gif", link: "https://www.atmos.albany.edu/weather/satellite/ne/00latestvis-nd.gif",
+     text: "Latest Visible Satellite Image"},
+    {image: "images/stationmap.png", link: "http://www.nysmesonet.org", text: "Latest NYS Mesonet Observations"}
+]; //image, text and, link for gallery
 
-    let currentIndex = 0;
+let currentIndex = 0;
 
-    function changeContent() {
-        const imgElement = document.getElementById('changingImage');
-        const linkElement = document.getElementById('changingLink');
-        const textElement = document.getElementById('changingText');
+function changeContent() {
+    const imgElement = document.getElementById('changingImage');
+    const linkElement = document.getElementById('changingLink');
+    const textElement = document.getElementById('changingText');
 
-        const currentTriplet = contentTriplets[currentIndex];
-        imgElement.src = currentTriplet.image;
-        linkElement.href = currentTriplet.link;
-        textElement.innerText = currentTriplet.text;
-    }
+    const currentTriplet = contentTriplets[currentIndex];
+    imgElement.src = currentTriplet.image;
+    linkElement.href = currentTriplet.link;
+    textElement.innerText = currentTriplet.text;
+}
 
-    function showPrevImage() {
-        currentIndex = (currentIndex - 1 + contentTriplets.length) % contentTriplets.length;
-        changeContent();
-    } //function to show the previous image in the gallery
+function showPrevImage() {
+    currentIndex = (currentIndex - 1 + contentTriplets.length) % contentTriplets.length;
+    changeContent();
+} //function to show the previous image in the gallery
 
-    function showNextImage() {
-        currentIndex = (currentIndex + 1) % contentTriplets.length;
-        changeContent();
-    } //function to show next image in the image gallery
+function showNextImage() {
+    currentIndex = (currentIndex + 1) % contentTriplets.length;
+    changeContent();
+} //function to show next image in the image gallery
 
-    function setImgInterval() {
-        galleryInterval = setInterval(showNextImage, 4000);
-    } //interval to automatically switch out gallery images
+function setImgInterval() {
+    galleryInterval = setInterval(showNextImage, 4000);
+} //interval to automatically switch out gallery images
 
-    function clearImgInterval() {
-        clearInterval(galleryInterval);
-    } //function to clear interval (used when stopping gallery from changing on hover)
+function clearImgInterval() {
+    clearInterval(galleryInterval);
+} //function to clear interval (used when stopping gallery from changing on hover)
 
-    document.getElementById('prevButton').addEventListener('click', showPrevImage); //next button
-    document.getElementById('nextButton').addEventListener('click', showNextImage); //last button
+document.getElementById('prevButton').addEventListener('click', showPrevImage); //next button
+document.getElementById('nextButton').addEventListener('click', showNextImage); //last button
 
-    document.getElementById('changingImage').addEventListener('mouseover', clearImgInterval); //pasue interval when hovered
-    document.getElementById('changingImage').addEventListener('mouseout', setImgInterval); //restart interval on mouse leave
+document.getElementById('changingImage').addEventListener('mouseover', clearImgInterval); //pasue interval when hovered
+document.getElementById('changingImage').addEventListener('mouseout', setImgInterval); //restart interval on mouse leave
 
-    galleryInterval = setInterval(showNextImage, 4000); //runs next img function every 4 seconds
+galleryInterval = setInterval(showNextImage, 4000); //runs next img function every 4 seconds
 </script>
 <script>
 //alicia bentley image gallery
-    const imgLinkPair = [
-        {image: "images/abentley/850_thetae_57.png", 
-         link: "https://www.atmos.albany.edu/student/abentley/realtime/standard.php?domain=northamer&variable=850_thetae"},
-        {image: "images/abentley/6hprecip_57.png", 
-         link: "https://www.atmos.albany.edu/student/abentley/realtime/standard.php?domain=northamer&variable=6hprecip"},
-        {image: "images/abentley/IVT_conv_57.png", 
-         link: "https://www.atmos.albany.edu/student/abentley/realtime/standard.php?domain=northamer&variable=IVT_conv"},
-        {image: "images/abentley/rel_vort_57.png", 
-         link: "https://www.atmos.albany.edu/student/abentley/realtime/standard.php?domain=northamer&variable=rel_vort"},
-        {image: "images/abentley/irro_wind_57.png", 
-         link: "https://www.atmos.albany.edu/student/abentley/realtime/subtrop.php?domain=northamer&variable=irro_wind"},
-        {image: "images/abentley/330K_isen_57.png", 
-         link: "https://www.atmos.albany.edu/student/abentley/realtime/subtrop.php?domain=northamer&variable=330K_isen"}
-    ];
+const imgLinkPair = [
+    {image: "images/abentley/850_thetae_57.png", 
+     link: "https://www.atmos.albany.edu/student/abentley/realtime/standard.php?domain=northamer&variable=850_thetae"},
+    {image: "images/abentley/6hprecip_57.png", 
+     link: "https://www.atmos.albany.edu/student/abentley/realtime/standard.php?domain=northamer&variable=6hprecip"},
+    {image: "images/abentley/IVT_conv_57.png", 
+     link: "https://www.atmos.albany.edu/student/abentley/realtime/standard.php?domain=northamer&variable=IVT_conv"},
+    {image: "images/abentley/rel_vort_57.png", 
+     link: "https://www.atmos.albany.edu/student/abentley/realtime/standard.php?domain=northamer&variable=rel_vort"},
+    {image: "images/abentley/irro_wind_57.png", 
+     link: "https://www.atmos.albany.edu/student/abentley/realtime/subtrop.php?domain=northamer&variable=irro_wind"},
+    {image: "images/abentley/330K_isen_57.png", 
+     link: "https://www.atmos.albany.edu/student/abentley/realtime/subtrop.php?domain=northamer&variable=330K_isen"}
+];
 
-    let abCurrentIndex = 0;
+let abCurrentIndex = 0;
 
-    function abChangeContent() {
-        const abImgElement = document.getElementById('abImage');
-        const abLinkElement = document.getElementById('abLink');
+function abChangeContent() {
+    const abImgElement = document.getElementById('abImage');
+    const abLinkElement = document.getElementById('abLink');
 
-        const currentPair = imgLinkPair[abCurrentIndex];
-        abImgElement.src = currentPair.image;
-        abLinkElement.href = currentPair.link;
-    }
+    const currentPair = imgLinkPair[abCurrentIndex];
+    abImgElement.src = currentPair.image;
+    abLinkElement.href = currentPair.link;
+}
 
-    function abShowPrevImage() {
-        abCurrentIndex = (abCurrentIndex - 1 + imgLinkPair.length) % imgLinkPair.length;
-        abChangeContent();
-    }
+function abShowPrevImage() {
+    abCurrentIndex = (abCurrentIndex - 1 + imgLinkPair.length) % imgLinkPair.length;
+    abChangeContent();
+}
 
-    function abShowNextImage() {
-        abCurrentIndex = (abCurrentIndex + 1) % imgLinkPair.length;
-        abChangeContent();
-    }
+function abShowNextImage() {
+    abCurrentIndex = (abCurrentIndex + 1) % imgLinkPair.length;
+    abChangeContent();
+}
 
-    document.getElementById('abPrevButton').addEventListener('click', abShowPrevImage);
-    document.getElementById('abNextButton').addEventListener('click', abShowNextImage);
+document.getElementById('abPrevButton').addEventListener('click', abShowPrevImage);
+document.getElementById('abNextButton').addEventListener('click', abShowNextImage);
 
-    setInterval(abShowNextImage, 3000);    
+setInterval(abShowNextImage, 3000);    
 </script>
 <script>
     // Add event listeners for hovering over legacy button
@@ -1328,7 +1432,7 @@ fetch(apiUrl2, {
     })
     .then(response => response.json())
     .then(data => {
-        // Extract forecast information from the response
+        // Extract current information from the response
         const newAPI = data.properties;
         
         console.log(newAPI);
@@ -1340,17 +1444,29 @@ fetch(apiUrl2, {
         document.getElementById("wxText").innerHTML = wxText;
         
         var tmpC = newAPI.temperature.value;
-        var tmpF = tmpC * (9/5) + 32
-        document.getElementById("tmpC").innerHTML = Math.round(tmpC) + "°C";
-        document.getElementById("tmpF").innerHTML = Math.round(tmpF) + "°F";
+        if (tmpC != null) {
+            var tmpF = tmpC * (9/5) + 32
+            document.getElementById("tmpC").innerHTML = Math.round(tmpC) + "°C";
+            document.getElementById("tmpF").innerHTML = Math.round(tmpF) + "°F";
+        } else {
+            document.getElementById("tmpF").innerHTML = "N/A";
+        }
         
         var dewpC = newAPI.dewpoint.value;
-        var dewpF = dewpC * (9/5) + 32
-        document.getElementById("dewpointC").innerHTML = Math.round(dewpC) + "°C";
-        document.getElementById("dewpointF").innerHTML = Math.round(dewpF) + "°F";
+        if (dewpC != null) {
+            var dewpF = dewpC * (9/5) + 32
+            document.getElementById("dewpointC").innerHTML = Math.round(dewpC) + "°C";
+            document.getElementById("dewpointF").innerHTML = Math.round(dewpF) + "°F";
+        } else {
+            document.getElementById("dewpointF").innerHTML = "N/A";
+        }
 
         var RH = newAPI.relativeHumidity.value;
-        document.getElementById("RH").innerHTML = Math.round(RH) + "%";
+        if (RH != null) {
+            document.getElementById("RH").innerHTML = Math.round(RH) + "%";
+        } else {
+            document.getElementById("RH").innerHTML = "N/A"
+        }
         
         var slpPa = newAPI.seaLevelPressure.value;
         if (slpPa != null) {
@@ -1362,12 +1478,20 @@ fetch(apiUrl2, {
         }
 
         var presPa = newAPI.barometricPressure.value;
-        var presHg = presPa * .00029529983071445
-        document.getElementById("presHg").innerHTML = presHg.toFixed(2) + '"';
+        if (presPa != null) {
+            var presHg = presPa * .00029529983071445
+            document.getElementById("presHg").innerHTML = presHg.toFixed(2) + '"';
+        } else {
+            document.getElementById("presHg").innerHTML = "N/A"
+        }
 
         var visM = newAPI.visibility.value;
-        var vis = visM * .0006213712
-        document.getElementById("vis").innerHTML = vis.toFixed(2) + "mi";
+        if (visM != null) {
+            var vis = visM * .0006213712
+            document.getElementById("vis").innerHTML = vis.toFixed(2) + "mi";
+        } else {
+            document.getElementById("vis").innerHTML = "N/A"
+        }
     })
     .catch(error => {
     console.error('Error fetching first JSON:', error);
