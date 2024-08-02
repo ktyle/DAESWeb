@@ -1938,6 +1938,7 @@ function speedUpLoop2() {
     } else {
         interval2 = interval2;
     }
+    console.log(interval2);
     sfcMapAnimation = setInterval(sfcMapLoop, interval2);
     loopSpeed2 = Math.round(1000 / interval2) + ' fps';
     document.getElementById('interval-counter-2').innerHTML = loopSpeed2;
@@ -1970,6 +1971,7 @@ function slowDownLoop2() {
     } else {
         interval2 = interval2;
     }
+    console.log(interval2);
     sfcMapAnimation = setInterval(sfcMapLoop, interval2);
     loopSpeed2 = Math.round(1000 / interval2) + ' fps';
     document.getElementById('interval-counter-2').innerHTML = loopSpeed2;
