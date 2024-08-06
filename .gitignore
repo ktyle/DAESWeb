@@ -1,0 +1,4 @@
+*.csv
+forecast.txt
+images/*
+metar.txt
